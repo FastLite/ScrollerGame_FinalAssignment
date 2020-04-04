@@ -1,3 +1,7 @@
 /Library
 /Logs
 
+/.vs
+/obj
+/Assembly-CSharp.csproj
+/ScrollerGame_FinalAssignment.sln
