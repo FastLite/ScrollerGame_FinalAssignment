@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public int shipIndex;
+   
 
     private void Awake()
     {
@@ -13,10 +13,7 @@ public class SceneLoader : MonoBehaviour
     }
     public int currentLevelNumber;
 
-    public void  SetShipIndex(int value)
-    {
-        shipIndex = value;
-    }
+    
 
     void LoadLevel()
     {

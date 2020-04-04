@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        int shipType = FindObjectOfType<SceneLoader>().shipIndex;
+        int shipType = PlayerPrefs.GetInt("shipType");
         Vector3 innitialPos = new Vector3(0, -5f, 0);
         GameObject ship;
         if (shipType == 1)
