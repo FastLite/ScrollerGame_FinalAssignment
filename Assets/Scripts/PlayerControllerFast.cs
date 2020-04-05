@@ -5,16 +5,24 @@ using UnityEngine;
 
 
 
-public class PlayerControllerFat : MonoBehaviour
+public class PlayerControllerFast : MonoBehaviour
 {
 
     public float movementSpeed = 0.5f;
 
-    public Transform bulletSpawnPt;
+    public Transform bulletSpawnPt1;
+
+    public Transform bulletSpawnPt2;
 
     public GameObject bulletPrefab;
 
-    public float bulletForce = 20;
+    public float bulletForce = 50;
+
+    public float bulletDamage = 5;
+
+
+
+
 
     void Update()
     {
@@ -31,11 +39,14 @@ public class PlayerControllerFat : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
 
-            GameObject go = Instantiate(bulletPrefab, bulletSpawnPt);
-            
+            GameObject go2 = Instantiate(bulletPrefab, bulletSpawnPt1);
+            GameObject go1 = Instantiate(bulletPrefab, bulletSpawnPt2);
 
 
-            go.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);
+            go1.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);
+            go2.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);
+
+
 
         }
 

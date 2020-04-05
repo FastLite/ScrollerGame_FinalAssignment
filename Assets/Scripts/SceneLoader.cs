@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-   
+
 
     private void Awake()
     {
@@ -13,14 +13,14 @@ public class SceneLoader : MonoBehaviour
     }
     public int currentLevelNumber;
 
-    
+
 
     void LoadLevel()
     {
         string fileName = "MainLevel" + currentLevelNumber;
         SceneManager.LoadScene(fileName, LoadSceneMode.Additive);
     }
-   
+
 
     public void OnLoadSceneCalledAdditive(int sceneNum)
     {
@@ -46,5 +46,5 @@ public class SceneLoader : MonoBehaviour
         currentLevelNumber++;
         LoadLevel();
     }
-    
+
 }

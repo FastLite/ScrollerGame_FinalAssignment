@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public int totalEnemiesToDestroy;
 
     [Header("Non specific UI")]
-    
+
 
     [Header("Game state screens")]
     public GameObject gameOverScreen;
@@ -74,10 +74,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   
+
     void Update()
     {
-        
+
     }
 
 
@@ -87,12 +87,12 @@ public class GameManager : MonoBehaviour
     }
     void CheckGameOver()
     {
-       
+
         //if ((totalEnemiesHit + totalEnemiesMissed) == totalEnemiesToDestroy)
         //{
         //    if (currentLevelNumber < totalLevels)
         //    {
-                
+
         //        if (totalEnemiesHit == totalEnemiesToDestroy)
         //        {
         //            Debug.Log("succesfssully completed..");
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         //            Debug.Log("level failed.. restart?");
         //            levelFailedScreen.SetActive(true);
         //        }
-                
+
         //    }
         //    else  
         //        gameOverScreen.SetActive(true);
