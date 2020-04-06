@@ -6,18 +6,16 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
 
+    public string level = "Level";
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+   
     public int currentLevelNumber;
 
 
 
     void LoadLevel()
     {
-        string fileName = "MainLevel" + currentLevelNumber;
+        string fileName = level + currentLevelNumber;
         SceneManager.LoadScene(fileName, LoadSceneMode.Additive);
     }
 
@@ -35,13 +33,13 @@ public class SceneLoader : MonoBehaviour
 
     public void ReloadCurrentLevel()
     {
-        string fileName = "Level" + currentLevelNumber;
-        SceneManager.LoadScene(1);
+        string fileName = level + currentLevelNumber;
+        
         LoadLevel();
     }
     public void LoadNextLevel()
     {
-        string fileName = "Level" + currentLevelNumber;
+        string fileName = level + currentLevelNumber;
         SceneManager.UnloadSceneAsync(fileName);
         currentLevelNumber++;
         LoadLevel();

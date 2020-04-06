@@ -32,8 +32,8 @@ public class PlayerControllerFat : MonoBehaviour
         {
 
             GameObject go = Instantiate(bulletPrefab, bulletSpawnPt);
-            
 
+            go.transform.parent = null;
 
             go.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);
 
@@ -42,5 +42,5 @@ public class PlayerControllerFat : MonoBehaviour
 
     }
 
-
+    
 }

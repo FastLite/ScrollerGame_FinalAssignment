@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public int totalLevels = 2;
 
+
     public int totalEnemiesToDestroy;
 
     [Header("Non specific UI")]
@@ -32,19 +33,9 @@ public class GameManager : MonoBehaviour
     [Header("Game state screens")]
     public GameObject gameOverScreen;
     public GameObject levelFailedScreen;
+    public GameObject pauseGameScreen;
 
-
-
-
-
-
-
-
-
-
-
-
-
+    public bool isGamePaused;
 
 
 
@@ -52,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        isGamePaused = false;
         int shipType = PlayerPrefs.GetInt("shipType");
         Vector3 innitialPos = new Vector3(0, -5f, 0);
         GameObject ship;
@@ -77,6 +69,28 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            DoSomethingWithpause();
+        }
+    }
+
+    public void DoSomethingWithpause()
+    {
+        if (!isGamePaused)
+        {
+            Time.timeScale = 0;
+            pauseGameScreen.SetActive(true);
+            isGamePaused = true;
+        }
+        else if (isGamePaused)
+        {
+            Time.timeScale = 1;
+            pauseGameScreen.SetActive(true);
+            isGamePaused = false;
+        }
+        else
+            return;
 
     }
 

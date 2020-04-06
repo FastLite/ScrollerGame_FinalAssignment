@@ -42,6 +42,10 @@ public class PlayerControllerFast : MonoBehaviour
             GameObject go2 = Instantiate(bulletPrefab, bulletSpawnPt1);
             GameObject go1 = Instantiate(bulletPrefab, bulletSpawnPt2);
 
+            go1.transform.parent = null;
+            go2.transform.parent = null;
+
+
 
             go1.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);
             go2.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);
@@ -53,5 +57,6 @@ public class PlayerControllerFast : MonoBehaviour
 
     }
 
+   
 
 }
