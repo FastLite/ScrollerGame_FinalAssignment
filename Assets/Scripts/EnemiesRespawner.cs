@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class EnemiesRespawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Enemy collided" + collision.gameObject);
+            //collision.gameObject.transform.position = new Vector3(, y + 20,);
+        }
     }
 }

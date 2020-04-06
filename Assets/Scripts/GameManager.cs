@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Scores")]
     public int score;
-    public int highScore;
+    public int highScore = 1;
     public TextMeshProUGUI scoreField;
     public TextMeshProUGUI highscoreField;
 
