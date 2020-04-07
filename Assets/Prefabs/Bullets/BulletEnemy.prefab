@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4693792684359634947}
   - component: {fileID: 1957492306116002242}
   - component: {fileID: 8841280759805440289}
+  - component: {fileID: 4566658917306119785}
   m_Layer: 0
-  m_Name: BulletFat 1
+  m_Name: BulletEnemy
   m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.028119281, y: 0.018108353}
+  m_Offset: {x: 0.026482157, y: 0.10548532}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28600565, y: 0.4101002}
+  m_Size: {x: 0.14848723, y: 0.20751512}
   m_EdgeRadius: 0
 --- !u!96 &8841280759805440289
 TrailRenderer:
@@ -237,3 +238,18 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &4566658917306119785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360650349594312787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c5d8e307ae7c14f9e0c81dbbe4b607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  explosionEffectPrefab: {fileID: 6906286687892643808, guid: 6f30993821525484bbf283dfcfda553b,
+    type: 3}

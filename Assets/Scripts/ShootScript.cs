@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile : MonoBehaviour
+public class ShootScript : MonoBehaviour
 {
-
+    public int damage;
 
     public GameObject explosionEffectPrefab;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Asteroid")
+        if (collision.gameObject.tag == "Enemy")
         {
 
 

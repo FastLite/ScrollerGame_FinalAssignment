@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour
     public GameObject fatPrefab;
     public GameObject fastPrefab;
 
+    [Header("Totals")]
     public int totalLevels = 2;
-
+    public int totalEnemiesHit;
 
     public int totalEnemiesToDestroy;
 
@@ -92,6 +93,14 @@ public class GameManager : MonoBehaviour
         else
             return;
 
+    }
+
+    public void OnEnemyHit()
+    {
+        totalEnemiesHit++;
+        score += 5; // each asteroid destroyed earns 5 points...
+
+        CheckGameOver();
     }
 
 
