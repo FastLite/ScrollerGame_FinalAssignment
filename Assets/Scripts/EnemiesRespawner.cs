@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class EnemiesRespawner : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy collided" + collision.gameObject);
-            //collision.gameObject.transform.position = new Vector3(, y + 20,);
+            float originalX = collision.transform.position.x;
+            Debug.Log("Enemy triggered" + collision.gameObject);
+            collision.gameObject.transform.position = new Vector3(originalX + Random.Range(-3,3), transform.position.y + Random.Range(40,60), 0);
         }
     }
+    
+    
 }

@@ -8,27 +8,34 @@ public class ShootScript : MonoBehaviour
 
     public GameObject explosionEffectPrefab;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
         {
+            if (collision.gameObject.tag == "Enemy")
+            {
 
 
-            GameObject explosion = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
-
-            Destroy(explosion, 2);
+                GameObject explosion = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
 
 
-            Destroy(collision.gameObject);
 
-            Destroy(gameObject);
+                Destroy(explosion, 2);
 
 
-            //GameObject.FindObjectOfType<GameManager>().OnEnemyHit();  
+                Destroy(collision.gameObject);
+
+                Destroy(gameObject);
+
+
+                GameObject.FindObjectOfType<GameManager>().OnEnemyDestroy();
+
+            }
 
         }
-
     }
+
 
 
 }

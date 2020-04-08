@@ -11,7 +11,10 @@ public class SceneLoader : MonoBehaviour
    
     public int currentLevelNumber;
 
-
+    private void Start()
+    {
+        currentLevelNumber = 1;
+    }
 
     void LoadLevel()
     {
@@ -34,7 +37,7 @@ public class SceneLoader : MonoBehaviour
     public void ReloadCurrentLevel()
     {
         string fileName = level + currentLevelNumber;
-        
+        SceneManager.UnloadSceneAsync(fileName);
         LoadLevel();
     }
     public void LoadNextLevel()

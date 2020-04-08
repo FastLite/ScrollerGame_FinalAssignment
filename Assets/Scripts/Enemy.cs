@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject explosionPrefab;
 
     private void Awake()
     {
@@ -14,7 +15,16 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
+            Destroy(explosion, 2);
+
+
+            
+            // Before destruction enemy should deal collision damage to the player
+
+
+            Destroy(gameObject);
         }
     }
 }

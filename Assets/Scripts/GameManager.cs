@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
+    private SceneLoader sLdr;
 
     [Header("Health Settings")]
     public int maxHealth;
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
     public Slider remainingHealthSlider;
 
     [Header("Scores")]
+
+    public int timeMark1;
+    public int timeMark2;
     public int score;
     public int highScore = 1;
     public TextMeshProUGUI scoreField;
@@ -24,19 +28,23 @@ public class GameManager : MonoBehaviour
 
     [Header("Totals")]
     public int totalLevels = 2;
-    public int totalEnemiesHit;
-
     public int totalEnemiesToDestroy;
+    public int totalEnemiesDestroyed;
+
 
     [Header("Non specific UI")]
 
 
     [Header("Game state screens")]
     public GameObject gameOverScreen;
+    public GameObject levelCompletedScreen;
     public GameObject levelFailedScreen;
     public GameObject pauseGameScreen;
 
+    [Header("Boolians")]
     public bool isGamePaused;
+    public bool shouldBossAppear;
+
 
 
 
@@ -44,6 +52,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        sLdr = GameObject.FindObjectOfType<SceneLoader>();
+
         isGamePaused = false;
         int shipType = PlayerPrefs.GetInt("shipType");
         Vector3 innitialPos = new Vector3(0, -5f, 0);
@@ -65,6 +75,8 @@ public class GameManager : MonoBehaviour
         {
             highScore = PlayerPrefs.GetInt("highScore");
         }
+
+
     }
 
 
@@ -95,9 +107,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void OnEnemyHit()
+    public void OnEnemyDestroy()
     {
-        totalEnemiesHit++;
+        totalEnemiesDestroyed++;
         score += 5; // each asteroid destroyed earns 5 points...
 
         CheckGameOver();
@@ -111,26 +123,32 @@ public class GameManager : MonoBehaviour
     void CheckGameOver()
     {
 
-        //if ((totalEnemiesHit + totalEnemiesMissed) == totalEnemiesToDestroy)
-        //{
-        //    if (currentLevelNumber < totalLevels)
-        //    {
+        if ((totalEnemiesDestroyed) == totalEnemiesToDestroy)
+        {
+            Debug.Log(sLdr.currentLevelNumber);
+            if (sLdr.currentLevelNumber < totalLevels)
+            {
 
-        //        if (totalEnemiesHit == totalEnemiesToDestroy)
-        //        {
-        //            Debug.Log("succesfssully completed..");
-        //            levelCompletedScreen.SetActive(true);
-        //        }
-        //        else 
-        //        {
-        //            Debug.Log("level failed.. restart?");
-        //            levelFailedScreen.SetActive(true);
-        //        }
+                if (totalEnemiesDestroyed == totalEnemiesToDestroy)
+                {
+                    Debug.Log("succesfssully completed..");
+                    
+                    sLdr.LoadNextLevel();
+                    levelCompletedScreen.SetActive(true);
+                }
+                else
+                {
+                    Debug.Log("level failed.. restart?");
+                    levelFailedScreen.SetActive(true);
+                }
 
-        //    }
-        //    else  
-        //        gameOverScreen.SetActive(true);
-        //}
+            }
+            else
+            {
+                
+                gameOverScreen.SetActive(true);
+            }
+        }
 
     }
 }
