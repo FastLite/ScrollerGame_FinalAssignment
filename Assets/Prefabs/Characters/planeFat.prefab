@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4147675419970355170}
   - component: {fileID: 4147675419970355168}
   - component: {fileID: 4147675419970355169}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: planeFat
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4147675421243247898}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

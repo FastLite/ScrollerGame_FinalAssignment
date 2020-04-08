@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public int highScore = 1;
     public TextMeshProUGUI scoreField;
     public TextMeshProUGUI highscoreField;
+    public TextMeshProUGUI TimeLeft;
+    
 
     [Header("Ship prefabs")]
     public GameObject fatPrefab;
@@ -30,9 +32,11 @@ public class GameManager : MonoBehaviour
     public int totalLevels = 2;
     public int totalEnemiesToDestroy;
     public int totalEnemiesDestroyed;
+    public int totalTimeForLevel = 20;
 
 
     [Header("Non specific UI")]
+    public int timeToDisplay;
 
 
     [Header("Game state screens")]
@@ -79,26 +83,47 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    private void FixedUpdate()
+    {
+        if (Time.timeSinceLevelLoad > 20)
+        {
+            Debug.Log("level failed.. restart?");
+            levelFailedScreen.SetActive(true);
+            CallPause();
+        }
+        else
+        {
+            return;
+        }
+    }
     void Update()
     {
+        float leveltime = GameObject.FindObjectOfType<TimerScript>().timeFromLevelStart;
+        if (!shouldBossAppear) 
+        {
+            timeToDisplay = Mathf.RoundToInt(totalTimeForLevel - leveltime);
+            TimeLeft.text = timeToDisplay.ToString();
+        }
+
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             DoSomethingWithpause();
         }
+
+        
     }
 
     public void DoSomethingWithpause()
     {
         if (!isGamePaused)
         {
-            Time.timeScale = 0;
+            CallPause();
             pauseGameScreen.SetActive(true);
             isGamePaused = true;
         }
         else if (isGamePaused)
         {
-            Time.timeScale = 1;
+            RemovePause();
             pauseGameScreen.SetActive(true);
             isGamePaused = false;
         }
@@ -116,6 +141,15 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void RemovePause()
+    {
+        Time.timeScale = 1;
+    }
+    public void CallPause()
+    {
+        Time.timeScale = 0;
+    }
+
     public void RegisterEnemy()
     {
         totalEnemiesToDestroy++;
@@ -125,6 +159,7 @@ public class GameManager : MonoBehaviour
 
         if ((totalEnemiesDestroyed) == totalEnemiesToDestroy)
         {
+            shouldBossAppear = true;
             Debug.Log(sLdr.currentLevelNumber);
             if (sLdr.currentLevelNumber < totalLevels)
             {
@@ -134,13 +169,10 @@ public class GameManager : MonoBehaviour
                     Debug.Log("succesfssully completed..");
                     
                     sLdr.LoadNextLevel();
+                    shouldBossAppear = false;
                     levelCompletedScreen.SetActive(true);
                 }
-                else
-                {
-                    Debug.Log("level failed.. restart?");
-                    levelFailedScreen.SetActive(true);
-                }
+                
 
             }
             else

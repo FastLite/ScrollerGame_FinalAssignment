@@ -43,6 +43,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadNextLevel()
     {
         string fileName = level + currentLevelNumber;
+        Time.timeScale = 0; //temporary solution
         SceneManager.UnloadSceneAsync(fileName);
         currentLevelNumber++;
         LoadLevel();
