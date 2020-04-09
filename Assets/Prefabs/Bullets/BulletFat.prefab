@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7360650349594312787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.006, y: -0.012, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &4693792684359634947
 Rigidbody2D:
   serializedVersion: 4
@@ -97,7 +97,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -119,10 +119,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.029095016, y: 0.018108353}
+  m_Offset: {x: 0.0027313419, y: 0.022647977}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.51398784, y: 0.46774614}
     oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1.79, y: 0.61}
     adaptiveTilingThreshold: 0.5
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13574357, y: 0.4101002}
+  m_Size: {x: 0.16888088, y: 0.41917944}
   m_EdgeRadius: 0
 --- !u!96 &8841280759805440289
 TrailRenderer:
@@ -169,8 +169,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 710665527
-  m_SortingLayer: 0
+  m_SortingLayerID: -1609176117
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Time: 0.19
   m_Parameters:
@@ -252,4 +252,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   explosionEffectPrefab: {fileID: 6906286687892643808, guid: 6f30993821525484bbf283dfcfda553b,
+    type: 3}
+  hitEffectPrefab: {fileID: 6906286687892643808, guid: 37a079d5c017bf64a9281853de04eea4,
     type: 3}

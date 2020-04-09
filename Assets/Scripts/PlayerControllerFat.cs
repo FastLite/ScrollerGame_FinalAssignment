@@ -7,6 +7,11 @@ using UnityEngine;
 
 public class PlayerControllerFat : MonoBehaviour
 {
+    public int maximumHealth = 150;
+
+    public int bulletDamage = 50;
+
+    public float bulletForce = 0.075f;
 
     public float movementSpeed = 0.5f;
 
@@ -14,8 +19,7 @@ public class PlayerControllerFat : MonoBehaviour
 
     public GameObject bulletPrefab;
 
-    public float bulletForce = 20;
-
+    
     void Update()
     {
 
@@ -30,6 +34,7 @@ public class PlayerControllerFat : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            Debug.Log("player should shoot here");
 
             GameObject go = Instantiate(bulletPrefab, bulletSpawnPt);
 
@@ -41,6 +46,10 @@ public class PlayerControllerFat : MonoBehaviour
 
 
     }
+    private void LateUpdate()
+    {
+        bulletSpawnPt.transform.parent.rotation = Quaternion.identity;
+    }
 
-    
+
 }

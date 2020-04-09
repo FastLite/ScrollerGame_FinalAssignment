@@ -7,9 +7,10 @@ public class ShowHighScore : MonoBehaviour
 {
     public TextMeshProUGUI highScoreTextField;
 
-
-    public void ShowHIghScore()
+    private void Start()
     {
-        highScoreTextField.text = PlayerPrefs.GetInt("highScore").ToString();
+        Debug.Log("current highscore is " + PlayerPrefs.GetInt("highScore"));
+        highScoreTextField.text = "current player highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
     }
+    
 }

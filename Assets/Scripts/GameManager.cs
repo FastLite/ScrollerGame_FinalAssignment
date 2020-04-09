@@ -5,24 +5,24 @@ using UnityEngine.UI;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
+
+
     private SceneLoader sLdr;
 
-    [Header("Health Settings")]
-    public int maxHealth;
-    public int currentHealth;
 
-    public Slider remainingHealthSlider;
+    [Header("Health Settings")]
+    public Slider HealthSlider;
 
     [Header("Scores")]
-
-    public int timeMark1;
-    public int timeMark2;
     public int score;
     public int highScore = 1;
     public TextMeshProUGUI scoreField;
     public TextMeshProUGUI highscoreField;
-    public TextMeshProUGUI TimeLeft;
-    
+
+    [Header("Ship Statistics")]
+    public int shipType;
+    public int damage;
+
 
     [Header("Ship prefabs")]
     public GameObject fatPrefab;
@@ -34,9 +34,14 @@ public class GameManager : MonoBehaviour
     public int totalEnemiesDestroyed;
     public int totalTimeForLevel = 20;
 
+    [Header("Time")]
+    public int LevelStartTime;
+    public int timeMark2;
+    public int timeToDisplay;
+    public float elapsedTime;
+    public TextMeshProUGUI TimeLeft;
 
     [Header("Non specific UI")]
-    public int timeToDisplay;
 
 
     [Header("Game state screens")]
@@ -48,7 +53,7 @@ public class GameManager : MonoBehaviour
     [Header("Boolians")]
     public bool isGamePaused;
     public bool shouldBossAppear;
-
+    public bool wasHitByFast;
 
 
 
@@ -56,53 +61,77 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
+
         sLdr = GameObject.FindObjectOfType<SceneLoader>();
 
         isGamePaused = false;
-        int shipType = PlayerPrefs.GetInt("shipType");
-        Vector3 innitialPos = new Vector3(0, -5f, 0);
-        GameObject ship;
-        if (shipType == 1)
-        {
-            ship = Instantiate(fatPrefab, innitialPos, Quaternion.identity);
 
-            Debug.Log("Ship FAT generated");
-        }
-        else
-        {
-            ship = Instantiate(fastPrefab, innitialPos, Quaternion.identity);
-
-            Debug.Log("Ship fast generated");
-        }
 
         if (PlayerPrefs.HasKey("highScore"))
         {
             highScore = PlayerPrefs.GetInt("highScore");
         }
 
+        shipType = PlayerPrefs.GetInt("shipType");
+        Vector3 innitialPos = new Vector3(0, -5f, 0);
+        GameObject ship;
 
-    }
+        switch (shipType)
+        {
+            case 1:
+                ship = Instantiate(fatPrefab, innitialPos, Quaternion.identity);
 
-    private void FixedUpdate()
-    {
-        if (Time.timeSinceLevelLoad > 20)
-        {
-            Debug.Log("level failed.. restart?");
-            levelFailedScreen.SetActive(true);
-            CallPause();
+                break;
+            case 2:
+                ship = Instantiate(fastPrefab, innitialPos, Quaternion.identity);
+                break;
+
+
         }
-        else
+
+
+        switch (shipType)
         {
-            return;
+            case 1:
+                PlayerControllerFat shipFAT = GameObject.FindObjectOfType<PlayerControllerFat>();
+
+
+
+                damage = shipFAT.bulletDamage;
+                HealthSlider.maxValue = shipFAT.maximumHealth;
+
+                Debug.Log("Ship FAT generated");
+
+                break;
+            case 2:
+                PlayerControllerFast shipFAST = GameObject.FindObjectOfType<PlayerControllerFast>();
+
+                wasHitByFast = false;
+
+                damage = shipFAST.bulletDamage;
+                HealthSlider.maxValue = shipFAST.maximumHealth;
+
+                Debug.Log("Ship fast generated");
+
+                break;
         }
+
+
+        HealthSlider.value = HealthSlider.maxValue;
+
     }
     void Update()
     {
-        float leveltime = GameObject.FindObjectOfType<TimerScript>().timeFromLevelStart;
-        if (!shouldBossAppear) 
+        if (score > highScore)
         {
-            timeToDisplay = Mathf.RoundToInt(totalTimeForLevel - leveltime);
-            TimeLeft.text = timeToDisplay.ToString();
+            highScore = score;
+        }
+        elapsedTime = Time.time - sLdr.LevelStartTime;
+        if (!shouldBossAppear)
+        {
+            timeToDisplay = Mathf.RoundToInt(totalTimeForLevel - elapsedTime);
+            TimeLeft.text = "Time Left: " + timeToDisplay.ToString();
         }
 
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -110,8 +139,20 @@ public class GameManager : MonoBehaviour
             DoSomethingWithpause();
         }
 
-        
+
     }
+    private void FixedUpdate()
+    {
+        if (elapsedTime > 20)
+        {
+            levelFailed();
+        }
+        else
+        {
+            return;
+        }
+    }
+
 
     public void DoSomethingWithpause()
     {
@@ -124,7 +165,7 @@ public class GameManager : MonoBehaviour
         else if (isGamePaused)
         {
             RemovePause();
-            pauseGameScreen.SetActive(true);
+            pauseGameScreen.SetActive(false);
             isGamePaused = false;
         }
         else
@@ -134,10 +175,31 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemyDestroy()
     {
-        totalEnemiesDestroyed++;
-        score += 5; // each asteroid destroyed earns 5 points...
-
+        if (shipType == 2)
+        {
+            if (!wasHitByFast)
+            {
+                totalEnemiesDestroyed++;
+                wasHitByFast = true;
+            }
+            else if (wasHitByFast)
+            {
+                wasHitByFast = false;
+            }
+        }
+        else
+        {
+            totalEnemiesDestroyed++;
+            score += GameObject.FindObjectOfType<Enemy>().pointCost; // each asteroid destroyed earns 5 points...
+        }
         CheckGameOver();
+    }
+
+    void levelFailed()
+    {
+        Debug.Log("level failed.. restart?");
+        levelFailedScreen.SetActive(true);
+        CallPause();
     }
 
 
@@ -156,31 +218,49 @@ public class GameManager : MonoBehaviour
     }
     void CheckGameOver()
     {
-
-        if ((totalEnemiesDestroyed) == totalEnemiesToDestroy)
+        if (HealthSlider.value <= 0)
         {
-            shouldBossAppear = true;
-            Debug.Log(sLdr.currentLevelNumber);
-            if (sLdr.currentLevelNumber < totalLevels)
-            {
+            levelFailed();
+        }
+        else
+        {
 
-                if (totalEnemiesDestroyed == totalEnemiesToDestroy)
+
+
+            if ((totalEnemiesDestroyed) == totalEnemiesToDestroy)
+            {
+                shouldBossAppear = true;
+                Debug.Log(sLdr.currentLevelNumber);
+                if (sLdr.currentLevelNumber < totalLevels)
                 {
-                    Debug.Log("succesfssully completed..");
-                    
-                    sLdr.LoadNextLevel();
-                    shouldBossAppear = false;
-                    levelCompletedScreen.SetActive(true);
-                }
-                
 
-            }
-            else
-            {
-                
-                gameOverScreen.SetActive(true);
+                    if (totalEnemiesDestroyed == totalEnemiesToDestroy)
+                    {
+                        if (highScore > PlayerPrefs.GetInt("highScore"))
+                        {
+                            PlayerPrefs.SetInt("highScore", highScore);
+                        }
+                        Debug.Log("succesfssully completed..");
+
+                        scoreField.text = "current score is: " + score.ToString();
+                        highscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
+
+                        sLdr.LoadNextLevel();
+                        shouldBossAppear = false;
+                        CallPause();
+                        levelCompletedScreen.SetActive(true);
+                    }
+
+
+                }
+                else
+                {
+                    CallPause();
+                    gameOverScreen.SetActive(true);
+                }
             }
         }
+
 
     }
 }

@@ -7,23 +7,19 @@ using UnityEngine;
 
 public class PlayerControllerFast : MonoBehaviour
 {
+    public int maximumHealth = 80;
 
-    public float movementSpeed = 0.5f;
+    public int bulletDamage = 5;
+
+    public float bulletForce = 0.2f;
+
+    public float movementSpeed = 1.5f;
 
     public Transform bulletSpawnPt1;
 
     public Transform bulletSpawnPt2;
 
     public GameObject bulletPrefab;
-
-    public float bulletForce = 50;
-
-    public float bulletDamage = 5;
-
-
-
-
-
     void Update()
     {
 
