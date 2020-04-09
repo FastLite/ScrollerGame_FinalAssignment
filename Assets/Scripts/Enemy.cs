@@ -10,7 +10,9 @@ public class Enemy : MonoBehaviour
 {
     public int pointCost = 5;
 
-    public float fireRateDelay; 
+    public float fireRateDelay;
+
+    public float randomFireDelayAdd;
 
     public int shootDamage;
     public int collisionDamage = 10;
@@ -31,7 +33,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         gMrg = GameObject.FindObjectOfType<GameManager>();
-        gMrg.RegisterEnemy();
+        //gMrg.RegisterEnemy();
 
         if (enemyType == ENEMY_TYPE.HEALTH_TYPE)
         {
@@ -41,13 +43,13 @@ public class Enemy : MonoBehaviour
         else if (enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE)
         {
             SetValues(100, 10, 20, 20);
-            SetFireRate(4);
+            SetFireRate(2.5f);
             SetHealthToDefault();
         }
         else if (enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
         {
             SetValues(125, 15, 30, 30);
-            SetFireRate(2.5f);
+            SetFireRate(4);
             SetHealthToDefault();
             
         }
@@ -60,7 +62,7 @@ public class Enemy : MonoBehaviour
 
         if (enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE || enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
         {
-            InvokeRepeating("Fire", fireRateDelay, fireRateDelay);
+            InvokeRepeating("Fire", fireRateDelay + randomFireDelayAdd, fireRateDelay + randomFireDelayAdd);
         }
     }
 
@@ -84,11 +86,13 @@ public class Enemy : MonoBehaviour
 
     void Fire()
     {
+        randomFireDelayAdd = Random.Range(-1, 2);
+
         ShootScript go = Instantiate(shootPrefab, shootSpawnPoint);
 
-        //go.transform.parent = null;
+        go.transform.parent = null;
 
-        go.GetComponent<Rigidbody2D>().AddForce(-transform.up * go.launchForce * 50);
+        go.GetComponent<Rigidbody2D>().AddForce(transform.up * go.launchForce * 1);
     }
 
 
