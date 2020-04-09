@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1957492306116002242}
   - component: {fileID: 8841280759805440289}
   - component: {fileID: 4566658917306119785}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: BulletEnemy
   m_TagString: bullet
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1979455
+        value: 0.40525904
         inSlope: 0.04523223
         outSlope: 0.04523223
         tangentMode: 0

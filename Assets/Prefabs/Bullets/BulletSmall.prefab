@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1957492306116002242}
   - component: {fileID: 8841280759805440289}
   - component: {fileID: 2250487956713619435}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BulletSmall
   m_TagString: bullet
   m_Icon: {fileID: 0}
@@ -250,7 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c5d8e307ae7c14f9e0c81dbbe4b607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootType: 0
   damage: 0
+  launchForce: 1
   explosionEffectPrefab: {fileID: 6906286687892643808, guid: 6f30993821525484bbf283dfcfda553b,
     type: 3}
   hitEffectPrefab: {fileID: 6906286687892643808, guid: 37a079d5c017bf64a9281853de04eea4,

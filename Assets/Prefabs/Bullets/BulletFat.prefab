@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1957492306116002242}
   - component: {fileID: 8841280759805440289}
   - component: {fileID: 6420279762728628311}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BulletFat
   m_TagString: bullet
   m_Icon: {fileID: 0}
@@ -152,6 +152,7 @@ TrailRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 8779c962636b1694280e3c19e3d9b000, type: 2}
+  - {fileID: 2100000, guid: 8779c962636b1694280e3c19e3d9b000, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -180,8 +181,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.1979455
+        time: 0.004924774
+        value: 0.5272149
         inSlope: 0.04523223
         outSlope: 0.04523223
         tangentMode: 0
@@ -250,7 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c5d8e307ae7c14f9e0c81dbbe4b607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootType: 0
   damage: 0
+  launchForce: 1
   explosionEffectPrefab: {fileID: 6906286687892643808, guid: 6f30993821525484bbf283dfcfda553b,
     type: 3}
   hitEffectPrefab: {fileID: 6906286687892643808, guid: 37a079d5c017bf64a9281853de04eea4,

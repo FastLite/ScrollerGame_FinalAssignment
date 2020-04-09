@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Game state screens")]
-    public GameObject gameOverScreen;
+    public GameObject gameWinScreen;
     public GameObject levelCompletedScreen;
     public GameObject levelFailedScreen;
     public GameObject pauseGameScreen;
@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
     public bool isGamePaused;
     public bool shouldBossAppear;
     public bool wasHitByFast;
+    public bool isbossKilled;
+    
 
 
 
@@ -118,7 +120,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        HealthSlider.value = HealthSlider.maxValue;
+        ResetHealth();
 
     }
     void Update()
@@ -151,6 +153,26 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+    }
+
+    public void ResetHealth()
+    {
+        HealthSlider.value = HealthSlider.maxValue;
+    }
+
+    public void ChangePlayersHealth(int healthChange)
+    {
+
+        HealthSlider.value += healthChange;
+
+        Debug.Log("Health changed on value of" + healthChange);
+
+        if (HealthSlider.value <= 0)
+        {
+            levelFailed();
+            ResetHealth();
+        }
+
     }
 
 
@@ -218,49 +240,35 @@ public class GameManager : MonoBehaviour
     }
     void CheckGameOver()
     {
-        if (HealthSlider.value <= 0)
+        if ((totalEnemiesDestroyed) == totalEnemiesToDestroy)
         {
-            levelFailed();
-        }
-        else
-        {
-
-
-
-            if ((totalEnemiesDestroyed) == totalEnemiesToDestroy)
+            shouldBossAppear = true;
+            Debug.Log(sLdr.currentLevelNumber);
+            if (sLdr.currentLevelNumber < totalLevels)
             {
-                shouldBossAppear = true;
-                Debug.Log(sLdr.currentLevelNumber);
-                if (sLdr.currentLevelNumber < totalLevels)
+                if (highScore > PlayerPrefs.GetInt("highScore"))
                 {
-
-                    if (totalEnemiesDestroyed == totalEnemiesToDestroy)
-                    {
-                        if (highScore > PlayerPrefs.GetInt("highScore"))
-                        {
-                            PlayerPrefs.SetInt("highScore", highScore);
-                        }
-                        Debug.Log("succesfssully completed..");
-
-                        scoreField.text = "current score is: " + score.ToString();
-                        highscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
-
-                        sLdr.LoadNextLevel();
-                        shouldBossAppear = false;
-                        CallPause();
-                        levelCompletedScreen.SetActive(true);
-                    }
-
-
+                    PlayerPrefs.SetInt("highScore", highScore);
                 }
-                else
-                {
-                    CallPause();
-                    gameOverScreen.SetActive(true);
-                }
+                Debug.Log("succesfssully completed..");
+
+                scoreField.text = "current score is: " + score.ToString();
+                highscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
+
+                ResetHealth();
+
+                sLdr.LoadNextLevel();
+                shouldBossAppear = false;
+                CallPause();
+                levelCompletedScreen.SetActive(true);
             }
+            else
+            {
+                CallPause();
+                gameWinScreen.SetActive(true);
+            }
+
         }
-
-
+        
     }
 }

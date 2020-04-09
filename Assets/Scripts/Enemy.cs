@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 
 
-public enum ENEMY_TYPE { ONE_SHOT, HEALTH_TYPE, SHOOTINGWEEK_TYPE, SHOOTINGSTRONG_TYPE};
+public enum ENEMY_TYPE { ONE_SHOT, HEALTH_TYPE, SHOOTINGWEEK_TYPE, SHOOTINGSTRONG_TYPE };
 public class Enemy : MonoBehaviour
 {
     public int pointCost = 5;
 
-    public float fireRateDelay;
+    public float fixedFireRateDelay;
 
     public float randomFireDelayAdd;
+    public float finalDelay;
 
     public int shootDamage;
     public int collisionDamage = 10;
@@ -28,12 +29,12 @@ public class Enemy : MonoBehaviour
 
     public Slider healthSlider;
 
-    
+
 
     private void Awake()
     {
         gMrg = GameObject.FindObjectOfType<GameManager>();
-        //gMrg.RegisterEnemy();
+        gMrg.RegisterEnemy();
 
         if (enemyType == ENEMY_TYPE.HEALTH_TYPE)
         {
@@ -43,17 +44,25 @@ public class Enemy : MonoBehaviour
         else if (enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE)
         {
             SetValues(100, 10, 20, 20);
-            SetFireRate(2.5f);
             SetHealthToDefault();
+            SetRandomDelayAndCombine(2.5f);
         }
         else if (enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
         {
             SetValues(125, 15, 30, 30);
-            SetFireRate(4);
             SetHealthToDefault();
-            
+            SetRandomDelayAndCombine(4.0f);
+
         }
-        
+
+    }
+
+    public void SetRandomDelayAndCombine(float rate)
+    {
+        fixedFireRateDelay = rate;
+
+        randomFireDelayAdd = Random.Range(-1.0f, 2.1f);
+        finalDelay = fixedFireRateDelay + randomFireDelayAdd;
     }
 
     private void Start()
@@ -62,7 +71,9 @@ public class Enemy : MonoBehaviour
 
         if (enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE || enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
         {
-            InvokeRepeating("Fire", fireRateDelay + randomFireDelayAdd, fireRateDelay + randomFireDelayAdd);
+
+
+            InvokeRepeating("Fire", finalDelay, finalDelay);
         }
     }
 
@@ -70,7 +81,7 @@ public class Enemy : MonoBehaviour
     {
         healthSlider.value = healthSlider.maxValue;
     }
-   
+
     public void SetValues(int maxHealthEnemy, int damageEnemy, int collisionDmg, int cost)
     {
         collisionDamage = collisionDmg;
@@ -79,14 +90,10 @@ public class Enemy : MonoBehaviour
         pointCost = cost;
     }
 
-    public void SetFireRate(float rate)
-    {
-        fireRateDelay = rate;
-    }
 
     void Fire()
     {
-        randomFireDelayAdd = Random.Range(-1, 2);
+
 
         ShootScript go = Instantiate(shootPrefab, shootSpawnPoint);
 
@@ -125,10 +132,10 @@ public class Enemy : MonoBehaviour
 
     public bool IsEnemyKilled(int damage)
     {
-        if (enemyType==ENEMY_TYPE.HEALTH_TYPE || enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE || enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
+        if (enemyType == ENEMY_TYPE.HEALTH_TYPE || enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE || enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
         {
             healthSlider.value -= damage;
-            
+
             if (healthSlider.value <= 0)
             {
                 return true;
@@ -138,7 +145,7 @@ public class Enemy : MonoBehaviour
                 return false;
             }
         }
-        else if (enemyType == ENEMY_TYPE.ONE_SHOT )
+        else if (enemyType == ENEMY_TYPE.ONE_SHOT)
         {
             return true;
         }

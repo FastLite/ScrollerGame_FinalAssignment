@@ -1121,7 +1121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195, y: -227.37}
+  m_AnchoredPosition: {x: 676.5, y: -222.87}
   m_SizeDelta: {x: 119.51001, y: 35.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374612311
@@ -3522,7 +3522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195, y: -362.63}
+  m_AnchoredPosition: {x: 676.5, y: -358.13}
   m_SizeDelta: {x: 119.51001, y: 35.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232690686
@@ -5757,7 +5757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195, y: -295}
+  m_AnchoredPosition: {x: 676.5, y: -290.5}
   m_SizeDelta: {x: 119.51001, y: 35.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1827136081
@@ -6442,7 +6442,7 @@ MonoBehaviour:
   timeToDisplay: 0
   elapsedTime: 0
   TimeLeft: {fileID: 737898792}
-  gameOverScreen: {fileID: 1933292871}
+  gameWinScreen: {fileID: 1933292871}
   levelCompletedScreen: {fileID: 1914121864}
   levelFailedScreen: {fileID: 1442503518}
   pauseGameScreen: {fileID: 1673826607}

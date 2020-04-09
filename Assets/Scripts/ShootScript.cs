@@ -26,12 +26,9 @@ public class ShootScript : MonoBehaviour
         {
             if (shootType==SHOOT_TYPE.PLAYER_SHOOT && collision.gameObject.tag == "Enemy")
             {
-                
 
-                GameObject HitEffect = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
 
-                Destroy(gameObject);
-                Destroy(HitEffect, 1);
+                InstantiateHitEffect();
 
 
 
@@ -49,15 +46,20 @@ public class ShootScript : MonoBehaviour
             }
             else if (shootType == SHOOT_TYPE.ENEMY_SHOOT && collision.gameObject.tag == "Player")
             {
-                gMgr.HealthSlider.value -= GameObject.FindObjectOfType<Enemy>().shootDamage;
+                gMgr.ChangePlayersHealth(GameObject.FindObjectOfType<Enemy>().shootDamage * -1);
 
-                GameObject HitEffect = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
-
-                Destroy(gameObject);
-                Destroy(HitEffect, 1);
+                InstantiateHitEffect();
             }
 
         }
+    }
+
+    public void InstantiateHitEffect()
+    {
+        GameObject HitEffect = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
+        Destroy(HitEffect, 1);
     }
 
 

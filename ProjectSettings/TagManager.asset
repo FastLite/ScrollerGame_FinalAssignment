@@ -19,9 +19,9 @@ TagManager:
   - Enemies
   - PlayerWalls
   - Player
-  - 
-  - 
-  - 
+  - BulletEnemy
+  - BulletPlayer
+  - PickUP
   - 
   - 
   - 
