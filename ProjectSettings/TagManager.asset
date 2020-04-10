@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - bullet
   - TIle
+  - TopTrigger
+  - PickUp
   layers:
   - Default
   - TransparentFX

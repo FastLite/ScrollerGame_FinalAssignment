@@ -10,7 +10,7 @@ public class EnemiesRespawner : MonoBehaviour
         {
             float originalX = collision.transform.position.x;
             Debug.Log("Enemy triggered" + collision.gameObject);
-            collision.gameObject.transform.position = new Vector3(originalX + Random.Range(-3,3), transform.position.y + Random.Range(40,60), 0);
+            collision.gameObject.transform.position = new Vector3(originalX + Random.Range(-3f,3f), transform.position.y + Random.Range(20f,40f), 0);
         }
     }
     

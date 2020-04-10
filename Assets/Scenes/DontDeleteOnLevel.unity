@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 92098142}
   m_Layer: 0
   m_Name: BulletDestroyCollider
-  m_TagString: Untagged
+  m_TagString: TopTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -769,7 +769,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 33.9, y: 1}
+  m_Size: {x: 40, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &260757915
 GameObject:
@@ -980,7 +980,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 33.43, y: 1.5}
+  m_Size: {x: 40, y: 1.5}
   m_EdgeRadius: 0
 --- !u!1 &285706463
 GameObject:
@@ -2571,7 +2571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921651245}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.27, y: -4.02, z: 0}
+  m_LocalPosition: {x: -19.08, y: -4.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 402459734}
@@ -3454,7 +3454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222538248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.22, y: -4.13, z: 0}
+  m_LocalPosition: {x: 18.93, y: -4.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 402459734}
@@ -6422,6 +6422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d27100254d7fd4ba1722f6481d3045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpList:
+  - {fileID: 6520524867576311296, guid: f894a2adf0b475c4ea87b0e58ec7374c, type: 3}
+  - {fileID: 4787687209822692442, guid: 5c2408a2f4223ed45b267b5c3f6ad535, type: 3}
+  initialPos: {x: 0, y: -5, z: 0}
   HealthSlider: {fileID: 265936869}
   score: 0
   highScore: 0
@@ -6449,6 +6453,7 @@ MonoBehaviour:
   isGamePaused: 0
   shouldBossAppear: 0
   wasHitByFast: 0
+  isbossKilled: 0
 --- !u!1 &1975683212
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,8 +7,11 @@ public class GameManager : MonoBehaviour
 {
 
 
+    public List<PickUpScript> pickUpList;
+
     private SceneLoader sLdr;
 
+    public Vector3 initialPos = new Vector3(0, -5f, 0);
 
     [Header("Health Settings")]
     public Slider HealthSlider;
@@ -41,8 +44,8 @@ public class GameManager : MonoBehaviour
     public float elapsedTime;
     public TextMeshProUGUI TimeLeft;
 
-    [Header("Non specific UI")]
-
+    [Header("Non specific")]
+    public GameObject pickupToinstantiate;
 
     [Header("Game state screens")]
     public GameObject gameWinScreen;
@@ -64,7 +67,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-
         sLdr = GameObject.FindObjectOfType<SceneLoader>();
 
         isGamePaused = false;
@@ -76,17 +78,17 @@ public class GameManager : MonoBehaviour
         }
 
         shipType = PlayerPrefs.GetInt("shipType");
-        Vector3 innitialPos = new Vector3(0, -5f, 0);
-        GameObject ship;
+        
+        
 
         switch (shipType)
         {
             case 1:
-                ship = Instantiate(fatPrefab, innitialPos, Quaternion.identity);
+                Instantiate(fatPrefab, initialPos, Quaternion.identity);
 
                 break;
             case 2:
-                ship = Instantiate(fastPrefab, innitialPos, Quaternion.identity);
+                Instantiate(fastPrefab, initialPos, Quaternion.identity);
                 break;
 
 
@@ -214,16 +216,25 @@ public class GameManager : MonoBehaviour
             totalEnemiesDestroyed++;
             score += GameObject.FindObjectOfType<Enemy>().pointCost; // each asteroid destroyed earns 5 points...
         }
+        SpawnPickup();
         CheckGameOver();
     }
 
     void levelFailed()
     {
         Debug.Log("level failed.. restart?");
+        ResetPlayerPosition();
         levelFailedScreen.SetActive(true);
         CallPause();
     }
 
+    public void ResetPlayerPosition()
+    {
+        GameObject ship;
+        ship = GameObject.FindGameObjectWithTag("Player");
+
+        ship.transform.position = initialPos;
+    }
 
     public void RemovePause()
     {
@@ -232,6 +243,15 @@ public class GameManager : MonoBehaviour
     public void CallPause()
     {
         Time.timeScale = 0;
+    }
+
+    public void SpawnPickup()
+    {
+        if (Random.Range(0, 101) >= 70)
+        {
+            Instantiate(pickUpList[Random.Range(0, pickUpList.Count)]);
+            Debug.Log("pickup spawned");
+        }
     }
 
     public void RegisterEnemy()
@@ -256,7 +276,7 @@ public class GameManager : MonoBehaviour
                 highscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
 
                 ResetHealth();
-
+                ResetPlayerPosition();
                 sLdr.LoadNextLevel();
                 shouldBossAppear = false;
                 CallPause();

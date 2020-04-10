@@ -423,9 +423,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4182602c025c2834ea24543e79feb499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointCost: 5
-  shootDamage: 0
-  collisionDamage: 10
+  pointCost: 20
+  maxHealthEnemy: 100
+  shootDamage: 10
+  collisionDamage: 20
+  fixedFireRateDelay: 0
+  randomFireDelayAdd: 0
+  finalDelay: 0
   enemyType: 2
   explosionPrefab: {fileID: 6906286687892643808, guid: 6f30993821525484bbf283dfcfda553b,
     type: 3}

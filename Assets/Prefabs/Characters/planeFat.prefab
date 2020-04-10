@@ -105,7 +105,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4147675419970355168
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumHealth: 150
-  bulletDamage: 50
-  bulletForce: 0.075
+  bulletDamage: 25
+  bulletForce: 7.5
   movementSpeed: 8
   bulletSpawnPt: {fileID: 4147675421243247898}
   bulletPrefab: {fileID: 7360650349594312787, guid: a5d1c16dd37ffc24c8964aec316b7fcd,

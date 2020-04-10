@@ -8,15 +8,18 @@ using UnityEngine.UI;
 public enum ENEMY_TYPE { ONE_SHOT, HEALTH_TYPE, SHOOTINGWEEK_TYPE, SHOOTINGSTRONG_TYPE };
 public class Enemy : MonoBehaviour
 {
+    [Header("basic stats")]
     public int pointCost = 5;
+    public int maxHealthEnemy;
+    public int shootDamage;
+    public int collisionDamage = 10;
 
+    [Header("rest")]
     public float fixedFireRateDelay;
 
     public float randomFireDelayAdd;
     public float finalDelay;
-
-    public int shootDamage;
-    public int collisionDamage = 10;
+   
 
     public ENEMY_TYPE enemyType;
 
@@ -29,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     public Slider healthSlider;
 
+    private bool isInView = false;
 
 
     private void Awake()
@@ -36,20 +40,25 @@ public class Enemy : MonoBehaviour
         gMrg = GameObject.FindObjectOfType<GameManager>();
         gMrg.RegisterEnemy();
 
+        //Set values on prefab insted of scripts
+
         if (enemyType == ENEMY_TYPE.HEALTH_TYPE)
         {
-            SetValues(50, 0, 10, 10);
+
+            healthSlider.maxValue = maxHealthEnemy;
             SetHealthToDefault();
         }
         else if (enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE)
         {
-            SetValues(100, 10, 20, 20);
+
+            healthSlider.maxValue = maxHealthEnemy;
             SetHealthToDefault();
             SetRandomDelayAndCombine(2.5f);
         }
         else if (enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
         {
-            SetValues(125, 15, 30, 30);
+
+            healthSlider.maxValue = maxHealthEnemy;
             SetHealthToDefault();
             SetRandomDelayAndCombine(4.0f);
 
@@ -65,31 +74,12 @@ public class Enemy : MonoBehaviour
         finalDelay = fixedFireRateDelay + randomFireDelayAdd;
     }
 
-    private void Start()
-    {
-
-
-        if (enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE || enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
-        {
-
-
-            InvokeRepeating("Fire", finalDelay, finalDelay);
-        }
-    }
+   
 
     public void SetHealthToDefault()
     {
         healthSlider.value = healthSlider.maxValue;
     }
-
-    public void SetValues(int maxHealthEnemy, int damageEnemy, int collisionDmg, int cost)
-    {
-        collisionDamage = collisionDmg;
-        shootDamage = damageEnemy;
-        healthSlider.maxValue = maxHealthEnemy;
-        pointCost = cost;
-    }
-
 
     void Fire()
     {
@@ -138,6 +128,7 @@ public class Enemy : MonoBehaviour
 
             if (healthSlider.value <= 0)
             {
+                
                 return true;
             }
             else
@@ -159,9 +150,28 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public void dropPickUP()
+    { 
+    }
 
 
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("TopTrigger"))
+        {
+            isInView = true;
+
+            if (enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE || enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
+            {
+
+
+                InvokeRepeating("Fire", finalDelay, finalDelay);
+            }
+        }
+        
+       
+    }
 
 }
