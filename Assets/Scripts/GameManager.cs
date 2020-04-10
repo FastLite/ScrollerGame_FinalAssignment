@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     public bool shouldBossAppear;
     public bool wasHitByFast;
     public bool isbossKilled;
-    
+
 
 
 
@@ -78,8 +78,8 @@ public class GameManager : MonoBehaviour
         }
 
         shipType = PlayerPrefs.GetInt("shipType");
-        
-        
+
+
 
         switch (shipType)
         {
@@ -244,7 +244,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    
+
 
     public void RegisterEnemy()
     {
@@ -281,6 +281,6 @@ public class GameManager : MonoBehaviour
             }
 
         }
-        
+
     }
 }
