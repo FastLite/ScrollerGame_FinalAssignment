@@ -96,9 +96,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4182602c025c2834ea24543e79feb499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointCost: 5
+  maxHealthEnemy: 0
+  shootDamage: 0
+  collisionDamage: 10
+  fixedFireRateDelay: 0
+  randomFireDelayAdd: 0
+  finalDelay: 0
   enemyType: 0
   explosionPrefab: {fileID: 6906286687892643808, guid: 6f30993821525484bbf283dfcfda553b,
     type: 3}
+  shootPrefab: {fileID: 0}
+  shootSpawnPoint: {fileID: 0}
+  pickupSpawnPoint: {fileID: 7787580715342554329}
   gMrg: {fileID: 0}
   healthSlider: {fileID: 0}
 --- !u!50 &7787580715342554334
@@ -121,7 +131,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7787580715342554333
 BoxCollider2D:
   m_ObjectHideFlags: 0

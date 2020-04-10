@@ -436,6 +436,7 @@ MonoBehaviour:
   shootPrefab: {fileID: 4566658917306119785, guid: 60a7e9d6910647249bf78622ccac27c3,
     type: 3}
   shootSpawnPoint: {fileID: 4989871369956892163}
+  pickupSpawnPoint: {fileID: 7787580715342554329}
   gMrg: {fileID: 0}
   healthSlider: {fileID: 1951623936593149670}
 --- !u!50 &7787580715342554334
@@ -458,7 +459,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7787580715342554333
 BoxCollider2D:
   m_ObjectHideFlags: 0

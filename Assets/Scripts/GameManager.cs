@@ -216,7 +216,6 @@ public class GameManager : MonoBehaviour
             totalEnemiesDestroyed++;
             score += GameObject.FindObjectOfType<Enemy>().pointCost; // each asteroid destroyed earns 5 points...
         }
-        SpawnPickup();
         CheckGameOver();
     }
 
@@ -245,14 +244,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void SpawnPickup()
-    {
-        if (Random.Range(0, 101) >= 70)
-        {
-            Instantiate(pickUpList[Random.Range(0, pickUpList.Count)]);
-            Debug.Log("pickup spawned");
-        }
-    }
+    
 
     public void RegisterEnemy()
     {

@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     public float randomFireDelayAdd;
     public float finalDelay;
-   
+
 
     public ENEMY_TYPE enemyType;
 
@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
 
     public ShootScript shootPrefab;
     public Transform shootSpawnPoint;
+    public Transform pickupSpawnPoint;
 
     public GameManager gMrg;
 
@@ -74,7 +75,7 @@ public class Enemy : MonoBehaviour
         finalDelay = fixedFireRateDelay + randomFireDelayAdd;
     }
 
-   
+
 
     public void SetHealthToDefault()
     {
@@ -128,7 +129,7 @@ public class Enemy : MonoBehaviour
 
             if (healthSlider.value <= 0)
             {
-                
+
                 return true;
             }
             else
@@ -150,16 +151,21 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void dropPickUP()
-    { 
+
+    public void SpawnPickup()
+    {
+        if (Random.Range(0, 101) >= 1)
+        {
+            Instantiate(gMrg.pickUpList[Random.Range(0, gMrg.pickUpList.Count)], pickupSpawnPoint);
+            pickupSpawnPoint.transform.parent = null;
+            Debug.Log("pickup spawned");
+        }
     }
-
-
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("TopTrigger"))
+        if (collision.CompareTag("TopTrigger"))
         {
             isInView = true;
 
@@ -170,8 +176,8 @@ public class Enemy : MonoBehaviour
                 InvokeRepeating("Fire", finalDelay, finalDelay);
             }
         }
-        
-       
+
+
     }
 
 }

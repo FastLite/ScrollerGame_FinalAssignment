@@ -37,8 +37,11 @@ public class ShootScript : MonoBehaviour
                 if (enemyRef.IsEnemyKilled(gMgr.damage))
                 {
                     GameObject explosion = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+                    
                     Destroy(explosion, 2);
                     Destroy(collision.gameObject);
+
+                    enemyRef.SpawnPickup();
 
                     GameObject.FindObjectOfType<GameManager>().OnEnemyDestroy();
                 }
