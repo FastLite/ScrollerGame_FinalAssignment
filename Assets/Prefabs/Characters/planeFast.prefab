@@ -175,6 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4890f66f7de25b24da0346be8dbce3db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireRate: 0.1
+  LastFire: 0
   maximumHealth: 80
   bulletDamage: 4
   bulletForce: 20

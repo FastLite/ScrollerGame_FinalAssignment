@@ -156,14 +156,16 @@ public class Enemy : MonoBehaviour
     {
         if (Random.Range(0, 101) >= 1)
         {
-            Instantiate(gMrg.pickUpList[Random.Range(0, gMrg.pickUpList.Count)], pickupSpawnPoint);
-            pickupSpawnPoint.transform.parent = null;
+
+           // go1.transform.parent = null;
+            Instantiate(gMrg.pickUpList[Random.Range(0, gMrg.pickUpList.Count)], new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
+          
             Debug.Log("pickup spawned");
         }
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("TopTrigger"))
         {

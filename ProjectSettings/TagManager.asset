@@ -9,6 +9,8 @@ TagManager:
   - TIle
   - TopTrigger
   - PickUp
+  - BottomTrigger
+  - ScrollingLevel
   layers:
   - Default
   - TransparentFX

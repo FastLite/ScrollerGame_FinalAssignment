@@ -111,9 +111,10 @@ public class GameManager : MonoBehaviour
             case 2:
                 PlayerControllerFast shipFAST = GameObject.FindObjectOfType<PlayerControllerFast>();
 
-                wasHitByFast = false;
+               
 
                 damage = shipFAST.bulletDamage;
+                wasHitByFast = false;
                 HealthSlider.maxValue = shipFAST.maximumHealth;
 
                 Debug.Log("Ship fast generated");
@@ -125,6 +126,8 @@ public class GameManager : MonoBehaviour
         ResetHealth();
 
     }
+
+    
     void Update()
     {
         if (score > highScore)
@@ -245,7 +248,40 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void ResetEverythingAtOnce()
+    {
+        ResetHealth();
+        ResetPlayerPosition();
+        switch (shipType)
+        {
+            case 1:
+                PlayerControllerFat shipFAT = GameObject.FindObjectOfType<PlayerControllerFat>();
+                damage = shipFAT.bulletDamage;
 
+                break;
+            case 2:
+                PlayerControllerFast shipFAST = GameObject.FindObjectOfType<PlayerControllerFast>();
+                damage = shipFAST.bulletDamage;
+
+                break;
+        }
+    }
+
+    public void OnLevelComplete()
+    {
+        ResetEverythingAtOnce();
+
+
+
+
+
+        sLdr.LoadNextLevel();
+        shouldBossAppear = false;
+        CallPause();
+        levelCompletedScreen.SetActive(true);
+
+        
+    }
     public void RegisterEnemy()
     {
         totalEnemiesToDestroy++;
@@ -267,12 +303,8 @@ public class GameManager : MonoBehaviour
                 scoreField.text = "current score is: " + score.ToString();
                 highscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
 
-                ResetHealth();
-                ResetPlayerPosition();
-                sLdr.LoadNextLevel();
-                shouldBossAppear = false;
-                CallPause();
-                levelCompletedScreen.SetActive(true);
+
+                OnLevelComplete();
             }
             else
             {

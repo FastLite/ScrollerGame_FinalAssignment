@@ -49,6 +49,8 @@ public class SceneLoader : MonoBehaviour
         string fileName = level + currentLevelNumber;
         SceneManager.UnloadSceneAsync(fileName);
         Debug.Log("Scene loaded : " + fileName);
+        GameManager gMrg = GameObject.FindObjectOfType<GameManager>();
+        gMrg.ResetEverythingAtOnce();
 
         LoadLevel();
     }

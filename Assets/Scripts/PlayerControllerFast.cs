@@ -7,6 +7,11 @@ using UnityEngine;
 
 public class PlayerControllerFast : MonoBehaviour
 {
+    public float FireRate = 1.0f;
+ 
+ 
+    public float LastFire;
+
     public int maximumHealth = 80;
 
     public int bulletDamage = 5;
@@ -26,13 +31,13 @@ public class PlayerControllerFast : MonoBehaviour
         float translationX = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
 
         float translationY = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
-
+        
 
         transform.Translate(translationX, 0, 0);
         transform.Translate(0, translationY, 0);
 
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && LastFire + FireRate <= Time.time)
         {
 
             GameObject go2 = Instantiate(bulletPrefab, bulletSpawnPt1);
@@ -46,7 +51,7 @@ public class PlayerControllerFast : MonoBehaviour
             go1.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);
             go2.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);
 
-
+            LastFire = Time.time;
 
         }
 

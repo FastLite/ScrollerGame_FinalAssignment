@@ -7,6 +7,10 @@ using UnityEngine;
 
 public class PlayerControllerFat : MonoBehaviour
 {
+    public float FireRate = 1.0f;
+
+    public float LastFire;
+
     public int maximumHealth = 150;
 
     public int bulletDamage = 50;
@@ -31,8 +35,9 @@ public class PlayerControllerFat : MonoBehaviour
         transform.Translate(translationX, 0, 0);
         transform.Translate(0, translationY, 0);
 
+        
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKey (KeyCode.Space) && LastFire + FireRate <= Time.time)
         {
             Debug.Log("player should shoot here");
 
@@ -41,7 +46,7 @@ public class PlayerControllerFat : MonoBehaviour
             go.transform.parent = null;
 
             go.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);
-
+            LastFire = Time.time;
         }
 
 

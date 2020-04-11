@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 92098140}
   - component: {fileID: 92098141}
   - component: {fileID: 92098142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletDestroyCollider
   m_TagString: TopTrigger
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.06019497, y: 5.2167797}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -462,7 +462,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 40.4, y: 1}
+  m_Size: {x: 41.242714, y: 11.433559}
   m_EdgeRadius: 0
 --- !u!114 &92098142
 MonoBehaviour:
@@ -5407,7 +5407,7 @@ GameObject:
   - component: {fileID: 1707166636}
   - component: {fileID: 1707166637}
   - component: {fileID: 1707166638}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RespawnTriggerForEnemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6446,6 +6446,7 @@ MonoBehaviour:
   timeToDisplay: 0
   elapsedTime: 0
   TimeLeft: {fileID: 737898792}
+  pickupToinstantiate: {fileID: 0}
   gameWinScreen: {fileID: 1933292871}
   levelCompletedScreen: {fileID: 1914121864}
   levelFailedScreen: {fileID: 1442503518}
