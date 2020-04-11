@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
     public float randomFireDelayAdd;
     public float finalDelay;
 
+    public float pickUpChance;
+
 
     public ENEMY_TYPE enemyType;
 
@@ -84,6 +86,7 @@ public class Enemy : MonoBehaviour
 
     void Fire()
     {
+
 
 
         ShootScript go = Instantiate(shootPrefab, shootSpawnPoint);
@@ -154,7 +157,7 @@ public class Enemy : MonoBehaviour
 
     public void SpawnPickup()
     {
-        if (Random.Range(0, 101) >= 80)
+        if (Random.Range(0.0f, 101.0f) >= 100 - pickUpChance)
         {
 
            

@@ -11,11 +11,13 @@ public class SceneLoader : MonoBehaviour
 
    
     public int currentLevelNumber;
+    GameManager gMrg;
 
     private void Start()
     {
         CaptureStartLevelTime();
         currentLevelNumber = 1;
+        gMrg = GameObject.FindObjectOfType<GameManager>();
     }
 
     public void CaptureStartLevelTime()
@@ -28,6 +30,7 @@ public class SceneLoader : MonoBehaviour
         string fileName = level + currentLevelNumber;
         CaptureStartLevelTime();
         SceneManager.LoadScene(fileName, LoadSceneMode.Additive);
+        gMrg.canPauseBeCalled = true;
     }
 
 
@@ -49,7 +52,7 @@ public class SceneLoader : MonoBehaviour
         string fileName = level + currentLevelNumber;
         SceneManager.UnloadSceneAsync(fileName);
         Debug.Log("Scene loaded : " + fileName);
-        GameManager gMrg = GameObject.FindObjectOfType<GameManager>();
+        
         gMrg.ResetEverythingAtOnce();
 
         LoadLevel();

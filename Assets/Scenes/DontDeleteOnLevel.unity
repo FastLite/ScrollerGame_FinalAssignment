@@ -1200,6 +1200,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1952725359}
+        m_MethodName: PauseCanBeCalledAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &374612312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3719,6 +3730,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1952725359}
+        m_MethodName: PauseCanBeCalledAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1238000990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4575,6 +4597,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1673826607}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1952725359}
+        m_MethodName: PauseCanBeCalledAgain
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6442,7 +6475,7 @@ MonoBehaviour:
   totalEnemiesDestroyed: 0
   totalTimeForLevel: 20
   LevelStartTime: 0
-  timeMark2: 0
+  timeForLevel: 60
   timeToDisplay: 0
   elapsedTime: 0
   TimeLeft: {fileID: 737898792}
@@ -6455,6 +6488,8 @@ MonoBehaviour:
   shouldBossAppear: 0
   wasHitByFast: 0
   isbossKilled: 0
+  canPauseBeCalled: 0
+  isGameOver: 0
 --- !u!1 &1975683212
 GameObject:
   m_ObjectHideFlags: 0

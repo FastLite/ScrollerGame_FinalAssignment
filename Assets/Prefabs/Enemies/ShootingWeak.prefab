@@ -425,11 +425,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointCost: 20
   maxHealthEnemy: 100
-  shootDamage: 10
   collisionDamage: 20
+  shootDamage: 10
   fixedFireRateDelay: 0
   randomFireDelayAdd: 0
   finalDelay: 0
+  pickUpChance: 15
   enemyType: 2
   explosionPrefab: {fileID: 6906286687892643808, guid: 6f30993821525484bbf283dfcfda553b,
     type: 3}
@@ -439,6 +440,7 @@ MonoBehaviour:
   pickupSpawnPoint: {fileID: 7787580715342554329}
   gMrg: {fileID: 0}
   healthSlider: {fileID: 1951623936593149670}
+  isInView: 0
 --- !u!50 &7787580715342554334
 Rigidbody2D:
   serializedVersion: 4

@@ -35,11 +35,11 @@ public class GameManager : MonoBehaviour
     public int totalLevels = 2;
     public int totalEnemiesToDestroy;
     public int totalEnemiesDestroyed;
-    public int totalTimeForLevel = 20;
+    
 
     [Header("Time")]
     public int LevelStartTime;
-    public int timeMark2;
+    public int timeForLevel;
     public int timeToDisplay;
     public float elapsedTime;
     public TextMeshProUGUI TimeLeft;
@@ -58,6 +58,9 @@ public class GameManager : MonoBehaviour
     public bool shouldBossAppear;
     public bool wasHitByFast;
     public bool isbossKilled;
+    public bool canPauseBeCalled;
+    public bool isGameOver;
+
 
 
 
@@ -66,6 +69,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        isGameOver = false;
+        canPauseBeCalled = true;
 
         sLdr = GameObject.FindObjectOfType<SceneLoader>();
 
@@ -121,6 +126,7 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
+        if (!isGameOver)
         CheckGameOver();
 
         if (score > highScore)
@@ -130,11 +136,11 @@ public class GameManager : MonoBehaviour
         elapsedTime = Time.time - sLdr.LevelStartTime;
         if (!shouldBossAppear)
         {
-            timeToDisplay = Mathf.RoundToInt(totalTimeForLevel - elapsedTime);
+            timeToDisplay = Mathf.RoundToInt(timeForLevel - elapsedTime);
             TimeLeft.text = "Time Left: " + timeToDisplay.ToString();
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && canPauseBeCalled)
         {
             DoSomethingWithpause();
         }
@@ -143,7 +149,7 @@ public class GameManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (elapsedTime > 20)
+        if (elapsedTime > timeForLevel)
         {
             levelFailed();
         }
@@ -217,10 +223,13 @@ public class GameManager : MonoBehaviour
 
     void levelFailed()
     {
+        isGameOver = true;
         Debug.Log("level failed.. restart?");
         ResetPlayerPosition();
         levelFailedScreen.SetActive(true);
         CallPause();
+        canPauseBeCalled = false;
+        
     }
 
     public void ResetPlayerPosition()
@@ -230,6 +239,7 @@ public class GameManager : MonoBehaviour
 
         ship.transform.position = initialPos;
     }
+    
 
     public void RemovePause()
     {
@@ -260,9 +270,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PauseCanBeCalledAgain()
+    {
+        canPauseBeCalled = true;
+    }
+
     public void OnLevelComplete()
     {
-        ResetEverythingAtOnce();
+        isGameOver = true;
+        
 
 
 
@@ -272,8 +288,10 @@ public class GameManager : MonoBehaviour
         shouldBossAppear = false;
         CallPause();
         levelCompletedScreen.SetActive(true);
+        isGameOver = false;
+        ResetEverythingAtOnce();
 
-        
+
     }
     public void RegisterEnemy()
     {
@@ -287,6 +305,8 @@ public class GameManager : MonoBehaviour
         }
         if ((totalEnemiesDestroyed) == totalEnemiesToDestroy)
         {
+            score += Mathf.RoundToInt(timeForLevel - elapsedTime) * 10;
+            canPauseBeCalled = false;
             shouldBossAppear = true;
             Debug.Log(sLdr.currentLevelNumber);
             if (sLdr.currentLevelNumber < totalLevels)
