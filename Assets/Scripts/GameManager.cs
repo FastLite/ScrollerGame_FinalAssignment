@@ -81,23 +81,13 @@ public class GameManager : MonoBehaviour
 
 
 
+        
+
+
         switch (shipType)
         {
             case 1:
                 Instantiate(fatPrefab, initialPos, Quaternion.identity);
-
-                break;
-            case 2:
-                Instantiate(fastPrefab, initialPos, Quaternion.identity);
-                break;
-
-
-        }
-
-
-        switch (shipType)
-        {
-            case 1:
                 PlayerControllerFat shipFAT = GameObject.FindObjectOfType<PlayerControllerFat>();
 
 
@@ -109,6 +99,7 @@ public class GameManager : MonoBehaviour
 
                 break;
             case 2:
+                Instantiate(fastPrefab, initialPos, Quaternion.identity);
                 PlayerControllerFast shipFAST = GameObject.FindObjectOfType<PlayerControllerFast>();
 
                
@@ -130,6 +121,8 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
+        CheckGameOver();
+
         if (score > highScore)
         {
             highScore = score;
@@ -202,7 +195,7 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemyDestroy()
     {
-        if (shipType == 2)
+        if (shipType == 2) //dirty fix of double enemy count on fast ship
         {
             if (!wasHitByFast)
             {
@@ -219,7 +212,7 @@ public class GameManager : MonoBehaviour
             totalEnemiesDestroyed++;
             score += GameObject.FindObjectOfType<Enemy>().pointCost; // each asteroid destroyed earns 5 points...
         }
-        CheckGameOver();
+        
     }
 
     void levelFailed()
@@ -288,6 +281,10 @@ public class GameManager : MonoBehaviour
     }
     void CheckGameOver()
     {
+        if (HealthSlider.value <= 0)
+        {
+            levelFailed();
+        }
         if ((totalEnemiesDestroyed) == totalEnemiesToDestroy)
         {
             shouldBossAppear = true;

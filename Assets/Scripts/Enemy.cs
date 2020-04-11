@@ -154,10 +154,10 @@ public class Enemy : MonoBehaviour
 
     public void SpawnPickup()
     {
-        if (Random.Range(0, 101) >= 1)
+        if (Random.Range(0, 101) >= 80)
         {
 
-           // go1.transform.parent = null;
+           
             Instantiate(gMrg.pickUpList[Random.Range(0, gMrg.pickUpList.Count)], new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
           
             Debug.Log("pickup spawned");
