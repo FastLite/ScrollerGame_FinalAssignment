@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class FirstBossScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int pointCost = 5;
+    public int maxHealthEnemy;
+    public int collisionDamage = 10;
+    public int shootDamage;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    
 }

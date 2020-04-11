@@ -23,6 +23,8 @@ public class PlayerControllerFat : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    public bool canShoot = true;
+
     
     void Update()
     {
@@ -37,7 +39,7 @@ public class PlayerControllerFat : MonoBehaviour
 
         
 
-        if (Input.GetKey (KeyCode.Space) && LastFire + FireRate <= Time.time)
+        if (Input.GetKey (KeyCode.Space) && LastFire + FireRate <= Time.time && canShoot)
         {
             Debug.Log("player should shoot here");
 

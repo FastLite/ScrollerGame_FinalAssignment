@@ -11,8 +11,8 @@ public class Enemy : MonoBehaviour
     [Header("basic stats")]
     public int pointCost = 5;
     public int maxHealthEnemy;
-    public int shootDamage;
     public int collisionDamage = 10;
+    public int shootDamage;
 
     [Header("rest")]
     public float fixedFireRateDelay;
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
 
     public Slider healthSlider;
 
-    private bool isInView = false;
+    public bool isInView = false;
 
 
     private void Awake()
@@ -165,11 +165,13 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("TopTrigger"))
+
+        if (collision.gameObject.CompareTag("TopTrigger"))
         {
             isInView = true;
+            Debug.Log("enemy collided with top trigger");
 
             if (enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE || enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
             {
@@ -178,8 +180,6 @@ public class Enemy : MonoBehaviour
                 InvokeRepeating("Fire", finalDelay, finalDelay);
             }
         }
-
-
     }
 
 }

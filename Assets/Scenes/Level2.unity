@@ -42141,7 +42141,7 @@ GameObject:
   - component: {fileID: 2110535017}
   m_Layer: 0
   m_Name: ScrollingLevel
-  m_TagString: Untagged
+  m_TagString: BottomTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42158,7 +42158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7621c48b1abda74d8185a3d5b3844ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -3
+  scrollSpeed: -2
 --- !u!4 &2110535018
 Transform:
   m_ObjectHideFlags: 0

@@ -7,8 +7,7 @@ public class PickUpScript : MonoBehaviour
 {
     public PICKUP_TYPE pickupType;
 
-    GameObject healthEffect;
-    GameObject DDEffect;
+   
 
     public float fallingSpeed = 2f;
 
@@ -45,16 +44,12 @@ public class PickUpScript : MonoBehaviour
     {
         gMrg.damage *= 2;
 
-        Instantiate(DDEffect, transform.position, Quaternion.identity);
-
-        Destroy(DDEffect, 2);
+        
         Debug.Log("damage increased in 2 and now is " + gMrg.damage);
     }
     public void RestoreHealth()
     {
-        Instantiate(healthEffect, transform.position, Quaternion.identity);
-
-        Destroy(healthEffect, 2);
+        
         gMrg.ResetHealth();
         Debug.Log("health restored");
     }
