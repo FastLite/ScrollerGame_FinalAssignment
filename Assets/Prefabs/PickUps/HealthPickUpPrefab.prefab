@@ -98,6 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupType: 0
+  healPrefab: {fileID: 982235844173409243, guid: 0162c2149e54b9b48b1ea8286c5c18e5,
+    type: 3}
+  DDPrefab: {fileID: 0}
   fallingSpeed: 2
 --- !u!61 &-2120850671427992242
 BoxCollider2D:

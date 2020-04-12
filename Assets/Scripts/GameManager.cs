@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     public int score;
     public int highScore = 1;
     public TextMeshProUGUI scoreField;
+    public TextMeshProUGUI finaScorelField;
     public TextMeshProUGUI highscoreField;
+    public TextMeshProUGUI finalHighscoreField;
 
     [Header("Ship Statistics")]
     public int shipType;
@@ -61,14 +63,23 @@ public class GameManager : MonoBehaviour
     public bool canPauseBeCalled;
     public bool isGameOver;
 
+    [Header("Audio")]
 
+    public AudioClip MusicFirstLevel;
+    public AudioClip MusicSecondLevel;
 
-
+    public AudioSource sourceOfAudio;
 
 
 
     void Start()
     {
+        sourceOfAudio = gameObject.GetComponent<AudioSource>();
+
+
+        sourceOfAudio.clip = MusicFirstLevel;
+        sourceOfAudio.Play();
+
         isGameOver = false;
         canPauseBeCalled = true;
 
@@ -137,7 +148,7 @@ public class GameManager : MonoBehaviour
         if (!shouldBossAppear)
         {
             timeToDisplay = Mathf.RoundToInt(timeForLevel - elapsedTime);
-            TimeLeft.text = "Time Left: " + timeToDisplay.ToString();
+            TimeLeft.text = "Time Left: " + timeToDisplay.ToString() + " sec";
         }
 
         if (Input.GetKeyUp(KeyCode.Escape) && canPauseBeCalled)
@@ -208,10 +219,10 @@ public class GameManager : MonoBehaviour
                 totalEnemiesDestroyed++;
                 wasHitByFast = true;
             }
-            else if (wasHitByFast)
-            {
+            
+            
                 wasHitByFast = false;
-            }
+            
         }
         else
         {
@@ -255,6 +266,8 @@ public class GameManager : MonoBehaviour
     {
         ResetHealth();
         ResetPlayerPosition();
+        totalEnemiesToDestroy = 0;
+        totalEnemiesDestroyed = 0;
         switch (shipType)
         {
             case 1:
@@ -278,8 +291,9 @@ public class GameManager : MonoBehaviour
     public void OnLevelComplete()
     {
         isGameOver = true;
-        
+        MusicFirstLevel.UnloadAudioData();
 
+        sourceOfAudio.clip = MusicSecondLevel;
 
 
 
@@ -296,6 +310,7 @@ public class GameManager : MonoBehaviour
     public void RegisterEnemy()
     {
         totalEnemiesToDestroy++;
+        Debug.Log("enemy registred");
     }
     void CheckGameOver()
     {
@@ -325,6 +340,9 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                scoreField.text = "Your final score is: " + score.ToString();
+                highscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
+
                 CallPause();
                 gameWinScreen.SetActive(true);
             }

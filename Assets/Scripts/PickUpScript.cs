@@ -7,7 +7,10 @@ public class PickUpScript : MonoBehaviour
 {
     public PICKUP_TYPE pickupType;
 
-   
+   public GameObject healPrefab;
+    public GameObject DDPrefab;
+    public int damageIncreaseRate;
+
 
     public float fallingSpeed = 2f;
 
@@ -29,11 +32,15 @@ public class PickUpScript : MonoBehaviour
             if (pickupType == PICKUP_TYPE.HEALTH)
             {
                 RestoreHealth();
+                Instantiate(healPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
+
             }
                
             else if (pickupType == PICKUP_TYPE.DAMAGE)
             {
+                
                 DoDoubleDamage();
+                Instantiate(DDPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
             }
             
         }
@@ -42,7 +49,7 @@ public class PickUpScript : MonoBehaviour
     }
     public void DoDoubleDamage()
     {
-        gMrg.damage *= 2;
+        gMrg.damage *= damageIncreaseRate;
 
         
         Debug.Log("damage increased in 2 and now is " + gMrg.damage);

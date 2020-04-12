@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 7787580715342554335}
   - component: {fileID: 7787580715342554334}
   - component: {fileID: 7787580715342554333}
+  - component: {fileID: -1072596678019273522}
   m_Layer: 8
   m_Name: NotShootingWithHealth
   m_TagString: Enemy
@@ -394,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointCost: 10
   maxHealthEnemy: 50
-  collisionDamage: 10
+  collisionDamage: 20
   shootDamage: 0
   fixedFireRateDelay: 0
   randomFireDelayAdd: 0
@@ -456,3 +457,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6960601, y: 1.1777}
   m_EdgeRadius: 0
+--- !u!95 &-1072596678019273522
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787580715342554332}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21c19e140e03f0649b7b87bff4596453, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

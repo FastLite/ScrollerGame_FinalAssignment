@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+       
         gMrg = GameObject.FindObjectOfType<GameManager>();
         gMrg.RegisterEnemy();
 
@@ -63,7 +64,7 @@ public class Enemy : MonoBehaviour
 
             healthSlider.maxValue = maxHealthEnemy;
             SetHealthToDefault();
-            SetRandomDelayAndCombine(4.0f);
+            SetRandomDelayAndCombine(2.0f);
 
         }
 
@@ -73,7 +74,7 @@ public class Enemy : MonoBehaviour
     {
         fixedFireRateDelay = rate;
 
-        randomFireDelayAdd = Random.Range(-1.0f, 2.1f);
+        randomFireDelayAdd = Random.Range(-0.5f, 2.1f);
         finalDelay = fixedFireRateDelay + randomFireDelayAdd;
     }
 
@@ -86,9 +87,6 @@ public class Enemy : MonoBehaviour
 
     void Fire()
     {
-
-
-
         ShootScript go = Instantiate(shootPrefab, shootSpawnPoint);
 
         go.transform.parent = null;
@@ -180,7 +178,7 @@ public class Enemy : MonoBehaviour
             {
 
 
-                InvokeRepeating("Fire", finalDelay, finalDelay);
+                InvokeRepeating("Fire", 0.1f, finalDelay);
             }
         }
     }

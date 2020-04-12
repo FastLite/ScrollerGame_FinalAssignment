@@ -24,6 +24,10 @@ public class PlayerControllerFast : MonoBehaviour
 
     public Transform bulletSpawnPt2;
 
+    public AudioClip shootSound;
+
+    public GameObject fireEffectPrefab;
+
     public GameObject bulletPrefab;
     void Update()
     {
@@ -39,9 +43,12 @@ public class PlayerControllerFast : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && LastFire + FireRate <= Time.time)
         {
+            AudioSource.PlayClipAtPoint(shootSound, transform.position);
 
             GameObject go2 = Instantiate(bulletPrefab, bulletSpawnPt1);
             GameObject go1 = Instantiate(bulletPrefab, bulletSpawnPt2);
+            Instantiate(fireEffectPrefab, bulletSpawnPt1);
+            Instantiate(fireEffectPrefab, bulletSpawnPt2);
 
             go1.transform.parent = null;
             go2.transform.parent = null;

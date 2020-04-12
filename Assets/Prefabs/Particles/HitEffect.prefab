@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7131790050375847068}
   - component: {fileID: 5363725786656897053}
   - component: {fileID: 7003395638366542380}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HitEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4786,8 +4786,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 710665527
-  m_SortingLayer: 0
+  m_SortingLayerID: -1609176117
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0

@@ -20,15 +20,14 @@ public class PlayerControllerFat : MonoBehaviour
     public float movementSpeed = 0.5f;
 
     public Transform bulletSpawnPt;
-
+    public GameObject fireEffectPrefab;
     public GameObject bulletPrefab;
 
-    public bool canShoot = true;
 
-    
+    public AudioClip shootSound;
     void Update()
     {
-
+       
         float translationX = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
 
         float translationY = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
@@ -39,12 +38,13 @@ public class PlayerControllerFat : MonoBehaviour
 
         
 
-        if (Input.GetKey (KeyCode.Space) && LastFire + FireRate <= Time.time && canShoot)
+        if (Input.GetKey (KeyCode.Space) && LastFire + FireRate <= Time.time)
         {
+            AudioSource.PlayClipAtPoint(shootSound, transform.position);
             Debug.Log("player should shoot here");
 
             GameObject go = Instantiate(bulletPrefab, bulletSpawnPt);
-
+            Instantiate(fireEffectPrefab, bulletSpawnPt);
             go.transform.parent = null;
 
             go.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce);

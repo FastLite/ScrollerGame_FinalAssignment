@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7787580715342554335}
   - component: {fileID: 7787580715342554334}
   - component: {fileID: 7787580715342554333}
+  - component: {fileID: -7715747332120401357}
   m_Layer: 8
   m_Name: NotShooting
   m_TagString: Enemy
@@ -160,3 +161,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6960601, y: 1.1777}
   m_EdgeRadius: 0
+--- !u!95 &-7715747332120401357
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787580715342554332}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7db21a1dff824c48bf4b27a559c18e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

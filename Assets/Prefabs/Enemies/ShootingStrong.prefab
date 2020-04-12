@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 7787580715342554335}
   - component: {fileID: 7787580715342554334}
   - component: {fileID: 7787580715342554333}
+  - component: {fileID: 6282492949861326028}
   m_Layer: 8
   m_Name: ShootingStrong
   m_TagString: Enemy
@@ -396,7 +397,7 @@ MonoBehaviour:
   pointCost: 30
   maxHealthEnemy: 150
   collisionDamage: 30
-  shootDamage: 15
+  shootDamage: 25
   fixedFireRateDelay: 0
   randomFireDelayAdd: 0
   finalDelay: 0
@@ -458,6 +459,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3695593, y: 1.512862}
   m_EdgeRadius: 0
+--- !u!95 &6282492949861326028
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787580715342554332}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2269507b7009d2f49b8565c22ca92a0a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8444560917081578774
 GameObject:
   m_ObjectHideFlags: 0
