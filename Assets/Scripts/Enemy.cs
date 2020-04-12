@@ -105,8 +105,9 @@ public class Enemy : MonoBehaviour
 
             gMrg.HealthSlider.value -= collisionDamage;
 
+            gMrg.score -=pointCost * 2;
             gMrg.OnEnemyDestroy();
-            gMrg.score = -pointCost;
+            
 
             // Before destruction enemy should deal collision damage to the player
 
@@ -128,15 +129,7 @@ public class Enemy : MonoBehaviour
         {
             healthSlider.value -= damage;
 
-            if (healthSlider.value <= 0)
-            {
-
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return healthSlider.value <= 0;
         }
         else if (enemyType == ENEMY_TYPE.ONE_SHOT)
         {

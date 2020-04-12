@@ -22,9 +22,16 @@ public class PlayerControllerFat : MonoBehaviour
     public Transform bulletSpawnPt;
     public GameObject fireEffectPrefab;
     public GameObject bulletPrefab;
-
+    public AudioSource sourceOfAudio;
 
     public AudioClip shootSound;
+
+
+    private void Start()
+    {
+        sourceOfAudio = gameObject.GetComponent<AudioSource>();
+    }
+
     void Update()
     {
        
@@ -40,7 +47,7 @@ public class PlayerControllerFat : MonoBehaviour
 
         if (Input.GetKey (KeyCode.Space) && LastFire + FireRate <= Time.time)
         {
-            AudioSource.PlayClipAtPoint(shootSound, transform.position);
+            sourceOfAudio.PlayOneShot(shootSound);
             Debug.Log("player should shoot here");
 
             GameObject go = Instantiate(bulletPrefab, bulletSpawnPt);

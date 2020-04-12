@@ -212,23 +212,10 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemyDestroy()
     {
-        if (shipType == 2) //dirty fix of double enemy count on fast ship
-        {
-            if (!wasHitByFast)
-            {
-                totalEnemiesDestroyed++;
-                wasHitByFast = true;
-            }
-            
-            
-                wasHitByFast = false;
-            
-        }
-        else
-        {
+        
             totalEnemiesDestroyed++;
             score += GameObject.FindObjectOfType<Enemy>().pointCost; // each asteroid destroyed earns 5 points...
-        }
+        
         
     }
 
@@ -332,6 +319,9 @@ public class GameManager : MonoBehaviour
                 }
                 Debug.Log("succesfssully completed..");
 
+                sourceOfAudio.clip = MusicSecondLevel;
+                sourceOfAudio.Play();
+
                 scoreField.text = "current score is: " + score.ToString();
                 highscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
 
@@ -340,9 +330,9 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                scoreField.text = "Your final score is: " + score.ToString();
-                highscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
-
+                finaScorelField.text = "Your final score is: " + score.ToString();
+                finalHighscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();
+                sourceOfAudio.Stop();
                 CallPause();
                 gameWinScreen.SetActive(true);
             }
