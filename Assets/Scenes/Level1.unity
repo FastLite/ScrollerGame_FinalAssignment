@@ -526,6 +526,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &28995971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 488453901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &28995974 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 488453901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &28995977
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28995971}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 10}
+  m_RelativeForce: {x: 100, y: 0}
+  m_Torque: 0
 --- !u!1 &34934513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,6 +2742,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &182251249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: ab1cc57bf006d254083937f9fa559582,
+    type: 3}
+  m_PrefabInstance: {fileID: 1898549610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &182251252 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+    type: 3}
+  m_PrefabInstance: {fileID: 1898549610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!231 &182251255
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182251249}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1271306311}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 4.7340784
+  m_DampingRatio: 0
+  m_Frequency: 1
+--- !u!247 &182251256
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182251249}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -20}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &184330526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,6 +3919,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &214678147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: e9abfdaee1571554aad540cfd03b5b7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 456503836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!231 &214678148
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214678147}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1919665308}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 8
+  m_DampingRatio: 0
+  m_Frequency: 1
+--- !u!255 &214678153
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214678147}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1764079593}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 9.12, y: -4.941163}
+  m_DampingRatio: 0
+  m_Frequency: 0
+--- !u!231 &214678154
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214678147}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 412359833}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 10
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1 &216703087
 GameObject:
   m_ObjectHideFlags: 0
@@ -6307,6 +6437,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &326809552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: ab1cc57bf006d254083937f9fa559582,
+    type: 3}
+  m_PrefabInstance: {fileID: 1030872614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!231 &326809553
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326809552}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1773933789}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 4.1792994
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1 &330203153
 GameObject:
   m_ObjectHideFlags: 0
@@ -7757,6 +7913,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: NotShooting (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
 --- !u!4 &396196534 stripped
@@ -7994,8 +8160,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: NotShooting (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
+--- !u!50 &412359833 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1612534591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &412935413
 GameObject:
   m_ObjectHideFlags: 0
@@ -8913,12 +9095,12 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.826354
+      value: -10.66
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 107.03532
+      value: 111.67
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -8948,7 +9130,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -8969,6 +9151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShootingWeak (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abfdaee1571554aad540cfd03b5b7d, type: 3}
@@ -9449,6 +9636,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -10997,6 +11194,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &604701323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: ab1cc57bf006d254083937f9fa559582,
+    type: 3}
+  m_PrefabInstance: {fileID: 1504333928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &604701326 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+    type: 3}
+  m_PrefabInstance: {fileID: 1504333928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!231 &604701329
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604701323}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 182251252}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0.00000004179003, y: 0.00000037679217}
+  m_AutoConfigureDistance: 0
+  m_Distance: 4.2295117
+  m_DampingRatio: 0
+  m_Frequency: 1
+--- !u!247 &604701330
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604701323}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -20}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &626734872
 GameObject:
   m_ObjectHideFlags: 0
@@ -12101,7 +12341,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -12122,6 +12362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554333, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -12737,7 +12982,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -12923,6 +13168,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &713705376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1030975591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &713705381
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713705376}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -5}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &718563514
 GameObject:
   m_ObjectHideFlags: 0
@@ -13409,6 +13671,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &732013210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 708570589}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &732013216
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732013210}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 5}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &734030947
 GameObject:
   m_ObjectHideFlags: 0
@@ -13616,7 +13895,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -13637,6 +13916,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -13802,6 +14086,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &745386930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 390098595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &745386933 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 390098595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &745386936
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745386930}
+  m_Enabled: 1
+  m_Force: {x: 100, y: 100}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &749109332
 GameObject:
   m_ObjectHideFlags: 0
@@ -14531,6 +14838,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &792332334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 994846746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &792332340
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792332334}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: 10, y: 0}
+  m_Torque: 0
+--- !u!231 &792332341
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792332334}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1600292527}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 6
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1 &797713778
 GameObject:
   m_ObjectHideFlags: 0
@@ -16177,12 +16521,12 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5691128
+      value: 3.03
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 81.41692
+      value: 81.33
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -16212,7 +16556,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -16233,6 +16577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShootingWithHealth (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1cc57bf006d254083937f9fa559582, type: 3}
@@ -16479,6 +16828,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &893014092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 965847040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &893014095 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 965847040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &893014098
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893014092}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: 0, y: 1}
+  m_Torque: 0
 --- !u!1 &894867976
 GameObject:
   m_ObjectHideFlags: 0
@@ -18079,7 +18451,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -18100,6 +18472,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -18553,7 +18935,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -18622,7 +19004,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -19258,7 +19640,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -19612,6 +19994,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1019415572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 967862972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!255 &1019415578
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019415572}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 893014095}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 4.689101, y: 5.224252}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1 &1023972877
 GameObject:
   m_ObjectHideFlags: 0
@@ -19754,7 +20160,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -19904,7 +20310,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -19925,6 +20331,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -21113,7 +21529,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -22676,6 +23092,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1191598347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 741132530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!231 &1191598353
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191598347}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1438518011}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 1
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1 &1194463114
 GameObject:
   m_ObjectHideFlags: 0
@@ -22823,6 +23265,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -23150,6 +23602,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1215233635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6305904087190967407, guid: e9abfdaee1571554aad540cfd03b5b7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1567577005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &1215233640
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215233635}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -20}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
+--- !u!50 &1215233641
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215233635}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1215241481
 GameObject:
   m_ObjectHideFlags: 0
@@ -23516,15 +24006,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 955444602}
-  - {fileID: 2091458866}
   - {fileID: 465051019}
   - {fileID: 1254595869}
   - {fileID: 1584766092}
-  - {fileID: 666168520}
   - {fileID: 1053042217}
+  - {fileID: 666168520}
+  - {fileID: 2091458866}
   - {fileID: 396196534}
   - {fileID: 274548059}
-  - {fileID: 226339474}
   - {fileID: 1925483513}
   - {fileID: 928840893}
   - {fileID: 1598376239}
@@ -23540,6 +24029,7 @@ Transform:
   - {fileID: 439632157}
   - {fileID: 868309454}
   - {fileID: 2025286843}
+  - {fileID: 226339474}
   - {fileID: 265392237}
   - {fileID: 126067178}
   - {fileID: 997758521}
@@ -23919,7 +24409,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -24435,6 +24925,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1271306311 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1567577005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1285648228
 GameObject:
   m_ObjectHideFlags: 0
@@ -25464,7 +25960,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -25485,6 +25981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -26318,12 +26819,12 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.237649
+      value: 10.42
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 51.3
+      value: 51.41
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -26353,7 +26854,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -26374,6 +26875,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShootingWithHealth (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1cc57bf006d254083937f9fa559582, type: 3}
@@ -27112,6 +27628,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1436302892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: ab1cc57bf006d254083937f9fa559582,
+    type: 3}
+  m_PrefabInstance: {fileID: 1801368683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!231 &1436302898
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436302892}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1641133966}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 4.26
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1 &1438462378
 GameObject:
   m_ObjectHideFlags: 0
@@ -27193,6 +27735,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1438518008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1242000820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1438518011 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1242000820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &1438518014
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438518008}
+  m_Enabled: 1
+  m_Force: {x: 20, y: 0}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &1441032889
 GameObject:
   m_ObjectHideFlags: 0
@@ -28353,12 +28918,12 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.3477669
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 78.539444
+      value: 78.33
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -28388,7 +28953,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -28409,6 +28974,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShootingWithHealth (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1cc57bf006d254083937f9fa559582, type: 3}
@@ -29740,12 +30315,12 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5691638
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 72.89491
+      value: 73.02
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -29775,7 +30350,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -29796,6 +30371,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShootingWeak (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abfdaee1571554aad540cfd03b5b7d, type: 3}
@@ -30135,6 +30720,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1898549610}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1600292524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1337149826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1600292527 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1337149826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &1600292530
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600292524}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: -10, y: 0}
+  m_Torque: 0
 --- !u!1 &1608076625
 GameObject:
   m_ObjectHideFlags: 0
@@ -30363,6 +30971,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -30935,8 +31553,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingWeak (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abfdaee1571554aad540cfd03b5b7d, type: 3}
+--- !u!1 &1641133963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 956109453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1641133966 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 956109453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &1641133969
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641133963}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 10}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &1644005586
 GameObject:
   m_ObjectHideFlags: 0
@@ -31834,6 +32480,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1691937178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 667372491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &1691937184
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691937178}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -5}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &1703300565
 GameObject:
   m_ObjectHideFlags: 0
@@ -32158,6 +32821,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1708531988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 405884562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1708531991 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 405884562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &1708531994
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708531988}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 10}
+  m_RelativeForce: {x: -10, y: 0}
+  m_Torque: 0
 --- !u!1 &1711930248
 GameObject:
   m_ObjectHideFlags: 0
@@ -33535,6 +34221,89 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1764079590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: e9abfdaee1571554aad540cfd03b5b7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1635493249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1764079593 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1635493249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &1764079596
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764079590}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 5}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
+--- !u!231 &1764079597
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764079590}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1708531991}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 6
+  m_DampingRatio: 0.8
+  m_Frequency: 1
+--- !u!231 &1764079598
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764079590}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 28995974}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 6
+  m_DampingRatio: 0.8
+  m_Frequency: 1
+--- !u!231 &1764079599
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764079590}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 745386933}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 6
+  m_DampingRatio: 0.8
+  m_Frequency: 1
 --- !u!1001 &1766454927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33601,6 +34370,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -33766,6 +34545,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1773933789 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+    type: 3}
+  m_PrefabInstance: {fileID: 1375878319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1774675611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33821,7 +34606,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -34386,7 +35171,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -34407,6 +35192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShootingWithHealth (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1cc57bf006d254083937f9fa559582, type: 3}
@@ -35463,6 +36253,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1893213685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: ab1cc57bf006d254083937f9fa559582,
+    type: 3}
+  m_PrefabInstance: {fileID: 874351097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!231 &1893213691
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893213685}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 604701326}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 3.7025533
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1001 &1898549610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35483,7 +36299,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5691128
+      value: 4.31
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -35518,7 +36334,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -35539,6 +36355,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShootingWithHealth (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1cc57bf006d254083937f9fa559582, type: 3}
@@ -35866,6 +36692,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1919665308 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1030975591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1920312461
 GameObject:
   m_ObjectHideFlags: 0
@@ -36019,6 +36851,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -36472,7 +37314,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -37468,6 +38310,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1997113023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: e9abfdaee1571554aad540cfd03b5b7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2076099214}
+  m_PrefabAsset: {fileID: 0}
+--- !u!255 &1997113029
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997113023}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1764079593}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -9.58, y: -5.061164}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1 &1998587066
 GameObject:
   m_ObjectHideFlags: 0
@@ -37879,6 +38745,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2029687441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: e9abfdaee1571554aad540cfd03b5b7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1567577005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &2029687446
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029687441}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: 100, y: 0}
+  m_Torque: 0
 --- !u!1 &2033308839
 GameObject:
   m_ObjectHideFlags: 0
@@ -38950,12 +39833,12 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.8707085
+      value: 8.04
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 107.377884
+      value: 111.79
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -39006,6 +39889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShootingWeak (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abfdaee1571554aad540cfd03b5b7d, type: 3}
@@ -39825,6 +40713,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2111474124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1766454927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!247 &2111474130
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111474124}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -5}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &2115547242
 GameObject:
   m_ObjectHideFlags: 0
