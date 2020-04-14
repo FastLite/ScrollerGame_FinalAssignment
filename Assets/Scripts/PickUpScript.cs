@@ -47,9 +47,9 @@ public class PickUpScript : MonoBehaviour
                 GameObject go = Instantiate(DDPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
                 Destroy(go, 2);
             }
-
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+       
 
     }
     public void DoDoubleDamage()

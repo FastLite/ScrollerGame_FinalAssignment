@@ -32769,29 +32769,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1708531988 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 405884562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1708531991 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
     type: 3}
   m_PrefabInstance: {fileID: 405884562}
   m_PrefabAsset: {fileID: 0}
---- !u!247 &1708531994
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708531988}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 10}
-  m_RelativeForce: {x: -10, y: 0}
-  m_Torque: 0
 --- !u!1 &1711930248
 GameObject:
   m_ObjectHideFlags: 0

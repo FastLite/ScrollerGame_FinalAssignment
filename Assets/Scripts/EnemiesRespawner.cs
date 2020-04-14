@@ -19,6 +19,7 @@ public class EnemiesRespawner : MonoBehaviour
             {
                 collision.gameObject.transform.position = new Vector3(originalX + Random.Range(-3f, 3f), transform.position.y + Random.Range(20f, 40f), 0);
             }
+
         }
     }
     

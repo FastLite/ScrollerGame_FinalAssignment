@@ -56,6 +56,8 @@ public class SceneLoader : MonoBehaviour
         gMrg.ResetEverythingAtOnce();
 
         LoadLevel();
+        gMrg.wasGameReloaded = true;
+        Time.timeScale = 1;
     }
     public void LoadNextLevel()
     {
@@ -65,6 +67,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.UnloadSceneAsync(fileName);
         currentLevelNumber++;
         LoadLevel();
+        gMrg.wasGameReloaded = false;
     }
 
 }

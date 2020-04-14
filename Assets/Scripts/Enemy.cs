@@ -194,7 +194,8 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.CompareTag("BottomTrigger"))
+            connectedBody.GetComponent<Enemy>().StopMovement();
         if (collision.gameObject.CompareTag("TopTrigger"))
         {
             isInView = true;

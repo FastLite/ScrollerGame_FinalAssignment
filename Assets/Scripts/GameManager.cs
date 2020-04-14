@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
     public bool isbossKilled;
     public bool canPauseBeCalled;
     public bool isGameOver;
+    public bool wasGameReloaded = false;
 
     [Header("Audio")]
 
@@ -276,7 +277,7 @@ public void makeFireAvaileble()
     {
         ResetHealth();
         ResetPlayerPosition();
-        totalEnemiesToDestroy = 0;
+        
         totalEnemiesDestroyed = 0;
         switch (shipType)
         {
@@ -324,8 +325,13 @@ public void makeFireAvaileble()
 
     public void RegisterEnemy()
     {
-        totalEnemiesToDestroy++;
-        Debug.Log("enemy registred");
+        if (wasGameReloaded)
+            return;
+        else
+        {
+            totalEnemiesToDestroy++;
+            Debug.Log("enemy registred");
+        }
     }
     void CheckGameOver()
     {
@@ -341,6 +347,7 @@ public void makeFireAvaileble()
             canPauseBeCalled = false;
             shouldBossAppear = true;
             Debug.Log(sLdr.currentLevelNumber);
+            
             if (highScore > PlayerPrefs.GetInt("highScore"))
             {
                 PlayerPrefs.SetInt("highScore", highScore);
