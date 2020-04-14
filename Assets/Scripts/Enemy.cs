@@ -37,9 +37,18 @@ public class Enemy : MonoBehaviour
 
     public bool isInView = false;
 
+    private Rigidbody2D connectedBody;
+
+    SpringJoint2D springJointRef;
 
     private void Awake()
     {
+
+         springJointRef = GetComponent <SpringJoint2D>();
+       
+        if(springJointRef!=null)
+
+        connectedBody = springJointRef.connectedBody;
        
         gMrg = GameObject.FindObjectOfType<GameManager>();
         gMrg.RegisterEnemy();
@@ -125,15 +134,32 @@ public class Enemy : MonoBehaviour
 
     public bool IsEnemyKilled(int damage)
     {
+        
         if (enemyType == ENEMY_TYPE.HEALTH_TYPE || enemyType == ENEMY_TYPE.SHOOTINGWEEK_TYPE || enemyType == ENEMY_TYPE.SHOOTINGSTRONG_TYPE)
         {
             healthSlider.value -= damage;
+            if ( (springJointRef == null  || healthSlider.value<=0) && connectedBody != null)
+            {
+                Debug.Log("Spring joint got destroyed on this enemy");
+                
+                connectedBody.GetComponent<Enemy>().StopMovement();
+            }
+           
 
             return healthSlider.value <= 0;
+
+
         }
         else if (enemyType == ENEMY_TYPE.ONE_SHOT)
         {
+            if (connectedBody != null)
+            {
+                
+                connectedBody.GetComponent<Enemy>().StopMovement();
+            }
             return true;
+
+            
         }
         else
         {
@@ -141,10 +167,17 @@ public class Enemy : MonoBehaviour
             return false;
         }
 
+        
 
 
     }
 
+   
+    public void StopMovement()
+    {
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
+    }
 
     public void SpawnPickup()
     {

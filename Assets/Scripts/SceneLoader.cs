@@ -59,6 +59,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadNextLevel()
     {
+        gMrg.MakeIsGameOverFalse();
         string fileName = level + currentLevelNumber;
         Time.timeScale = 0; //temporary solution
         SceneManager.UnloadSceneAsync(fileName);

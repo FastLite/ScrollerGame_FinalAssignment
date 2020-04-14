@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum SHOOT_TYPE { PLAYER_SHOOT,ENEMY_SHOOT}
+public enum SHOOT_TYPE { PLAYER_SHOOT, ENEMY_SHOOT }
 public class ShootScript : MonoBehaviour
 {
     public SHOOT_TYPE shootType;
@@ -24,7 +24,7 @@ public class ShootScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         {
-            if (shootType==SHOOT_TYPE.PLAYER_SHOOT && collision.gameObject.tag == "Enemy")
+            if (shootType == SHOOT_TYPE.PLAYER_SHOOT && collision.gameObject.tag == "Enemy")
             {
 
 
@@ -37,7 +37,7 @@ public class ShootScript : MonoBehaviour
                 if (enemyRef.IsEnemyKilled(gMgr.damage))
                 {
                     GameObject explosion = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
-                    
+
                     Destroy(explosion, 2);
                     Destroy(collision.gameObject);
 
@@ -54,6 +54,13 @@ public class ShootScript : MonoBehaviour
                 InstantiateHitEffect();
             }
 
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BottomTrigger"))
+        {
+            Destroy(gameObject);
         }
     }
 

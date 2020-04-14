@@ -2772,7 +2772,7 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
   m_Distance: 4.7340784
-  m_DampingRatio: 0
+  m_DampingRatio: 1
   m_Frequency: 1
 --- !u!247 &182251256
 ConstantForce2D:
@@ -9130,7 +9130,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -9156,6 +9156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abfdaee1571554aad540cfd03b5b7d, type: 3}
@@ -11224,7 +11229,7 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0.00000004179003, y: 0.00000037679217}
   m_AutoConfigureDistance: 0
   m_Distance: 4.2295117
-  m_DampingRatio: 0
+  m_DampingRatio: 0.5
   m_Frequency: 1
 --- !u!247 &604701330
 ConstantForce2D:
@@ -12368,6 +12373,11 @@ PrefabInstance:
       propertyPath: m_AutoTiling
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
 --- !u!1 &671149886
@@ -13003,6 +13013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -13671,23 +13686,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &732013210 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 708570589}
-  m_PrefabAsset: {fileID: 0}
---- !u!247 &732013216
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732013210}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 5}
-  m_RelativeForce: {x: 0, y: 0}
-  m_Torque: 0
 --- !u!1 &734030947
 GameObject:
   m_ObjectHideFlags: 0
@@ -13922,6 +13920,11 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
 --- !u!1 &741423379
@@ -14086,29 +14089,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &745386930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 390098595}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &745386933 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
     type: 3}
   m_PrefabInstance: {fileID: 390098595}
   m_PrefabAsset: {fileID: 0}
---- !u!247 &745386936
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745386930}
-  m_Enabled: 1
-  m_Force: {x: 100, y: 100}
-  m_RelativeForce: {x: 0, y: 0}
-  m_Torque: 0
 --- !u!1 &749109332
 GameObject:
   m_ObjectHideFlags: 0
@@ -14844,17 +14830,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 994846746}
   m_PrefabAsset: {fileID: 0}
---- !u!247 &792332340
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792332334}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 0}
-  m_RelativeForce: {x: 10, y: 0}
-  m_Torque: 0
 --- !u!231 &792332341
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -14873,7 +14848,7 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
   m_Distance: 6
-  m_DampingRatio: 0
+  m_DampingRatio: 0.5
   m_Frequency: 1
 --- !u!1 &797713778
 GameObject:
@@ -16556,7 +16531,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -16582,6 +16557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1cc57bf006d254083937f9fa559582, type: 3}
@@ -18476,7 +18456,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -18957,6 +18937,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NotShooting
       objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
 --- !u!1001 &967862972
@@ -19025,6 +19010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -19605,12 +19595,12 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.6647797
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 53.224113
+      value: 8.05
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -19640,7 +19630,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -19661,6 +19651,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -20181,6 +20176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShootingWithHealth (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1cc57bf006d254083937f9fa559582, type: 3}
@@ -21550,6 +21550,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -23115,8 +23120,8 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 1
-  m_DampingRatio: 0
+  m_Distance: 4
+  m_DampingRatio: 0.5
   m_Frequency: 1
 --- !u!1 &1194463114
 GameObject:
@@ -23602,44 +23607,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1215233635 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6305904087190967407, guid: e9abfdaee1571554aad540cfd03b5b7d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1567577005}
-  m_PrefabAsset: {fileID: 0}
---- !u!247 &1215233640
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215233635}
-  m_Enabled: 1
-  m_Force: {x: 0, y: -20}
-  m_RelativeForce: {x: 0, y: 0}
-  m_Torque: 0
---- !u!50 &1215233641
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215233635}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1215241481
 GameObject:
   m_ObjectHideFlags: 0
@@ -24009,6 +23976,7 @@ Transform:
   - {fileID: 465051019}
   - {fileID: 1254595869}
   - {fileID: 1584766092}
+  - {fileID: 1557773867}
   - {fileID: 1053042217}
   - {fileID: 666168520}
   - {fileID: 2091458866}
@@ -24018,7 +23986,6 @@ Transform:
   - {fileID: 928840893}
   - {fileID: 1598376239}
   - {fileID: 1628297252}
-  - {fileID: 1557773867}
   - {fileID: 1026506342}
   - {fileID: 1303503449}
   - {fileID: 899189391}
@@ -24430,6 +24397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -25930,7 +25902,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 63.02818
+      value: 10.62
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: 66434b0ce40a5514e86aa5067cced3f9,
         type: 3}
@@ -25986,6 +25958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -26884,7 +26861,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_Mass
-      value: 0.0001
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -28953,7 +28930,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -30350,7 +30327,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -30720,29 +30697,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1898549610}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1600292524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1337149826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1600292527 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
     type: 3}
   m_PrefabInstance: {fileID: 1337149826}
   m_PrefabAsset: {fileID: 0}
---- !u!247 &1600292530
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600292524}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 0}
-  m_RelativeForce: {x: -10, y: 0}
-  m_Torque: 0
 --- !u!1 &1608076625
 GameObject:
   m_ObjectHideFlags: 0
@@ -31531,7 +31491,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -31558,31 +31518,19 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abfdaee1571554aad540cfd03b5b7d, type: 3}
---- !u!1 &1641133963 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7787580715342554332, guid: 66434b0ce40a5514e86aa5067cced3f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 956109453}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1641133966 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
     type: 3}
   m_PrefabInstance: {fileID: 956109453}
   m_PrefabAsset: {fileID: 0}
---- !u!247 &1641133969
-ConstantForce2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641133963}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 10}
-  m_RelativeForce: {x: 0, y: 0}
-  m_Torque: 0
 --- !u!1 &1644005586
 GameObject:
   m_ObjectHideFlags: 0
@@ -32494,7 +32442,7 @@ ConstantForce2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691937178}
   m_Enabled: 1
-  m_Force: {x: 0, y: -5}
+  m_Force: {x: 0, y: -1}
   m_RelativeForce: {x: 0, y: 0}
   m_Torque: 0
 --- !u!1 &1703300565
@@ -34606,7 +34554,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -34627,6 +34575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShootingWeak (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abfdaee1571554aad540cfd03b5b7d, type: 3}
@@ -35197,6 +35150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: ab1cc57bf006d254083937f9fa559582,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1cc57bf006d254083937f9fa559582, type: 3}
@@ -36259,6 +36217,57 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 874351097}
   m_PrefabAsset: {fileID: 0}
+--- !u!247 &1893213686
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893213685}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -3}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
+--- !u!231 &1893213687
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893213685}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1271306311}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 8.675038
+  m_DampingRatio: 0.5
+  m_Frequency: 1
+--- !u!231 &1893213688
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893213685}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 182251252}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 5.595068
+  m_DampingRatio: 0.5
+  m_Frequency: 1
 --- !u!231 &1893213691
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -36277,7 +36286,7 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
   m_Distance: 3.7025533
-  m_DampingRatio: 0
+  m_DampingRatio: 0.3
   m_Frequency: 1
 --- !u!1001 &1898549610
 PrefabInstance:
@@ -36334,7 +36343,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: ab1cc57bf006d254083937f9fa559582,
         type: 3}
@@ -37335,6 +37344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NotShooting (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: 66434b0ce40a5514e86aa5067cced3f9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66434b0ce40a5514e86aa5067cced3f9, type: 3}
@@ -39384,7 +39398,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -39405,6 +39419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShootingWeak (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abfdaee1571554aad540cfd03b5b7d, type: 3}
@@ -39868,7 +39887,7 @@ PrefabInstance:
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7787580715342554329, guid: e9abfdaee1571554aad540cfd03b5b7d,
         type: 3}
@@ -39894,6 +39913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787580715342554334, guid: e9abfdaee1571554aad540cfd03b5b7d,
+        type: 3}
+      propertyPath: m_Mass
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9abfdaee1571554aad540cfd03b5b7d, type: 3}

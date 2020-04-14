@@ -30,6 +30,7 @@ public class PlayerControllerFat : MonoBehaviour
     private void Start()
     {
         sourceOfAudio = gameObject.GetComponent<AudioSource>();
+        sourceOfAudio.Stop();
     }
 
     void Update()

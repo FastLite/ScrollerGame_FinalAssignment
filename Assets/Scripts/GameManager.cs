@@ -137,10 +137,9 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        if (!isGameOver)
-        CheckGameOver();
+        
 
-        if (score > highScore)
+        if (score >= highScore)
         {
             highScore = score;
         }
@@ -155,7 +154,8 @@ public class GameManager : MonoBehaviour
         {
             DoSomethingWithpause();
         }
-
+        if (!isGameOver)
+            CheckGameOver();
 
     }
     private void FixedUpdate()
@@ -212,11 +212,34 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemyDestroy()
     {
-        
+        if (shipType == 2)
+        {
+            if (!wasHitByFast)
+            {
+                wasHitByFast = true;
+                totalEnemiesDestroyed++;
+                score += GameObject.FindObjectOfType<Enemy>().pointCost;
+            }
+            else
+            {
+                makeFireAvaileble();
+            }
+            Invoke("makeFireAvaileble",0.01f); //making a delay restoring washitbyfast so allowing other shoots continue to destroy shops 
+
+        }
+        else
+        {
+
+
             totalEnemiesDestroyed++;
-            score += GameObject.FindObjectOfType<Enemy>().pointCost; // each asteroid destroyed earns 5 points...
-        
-        
+            score += GameObject.FindObjectOfType<Enemy>().pointCost;
+        }
+
+    }
+
+public void makeFireAvaileble()
+    {
+        wasHitByFast = false;
     }
 
     void levelFailed()
@@ -281,8 +304,8 @@ public class GameManager : MonoBehaviour
         MusicFirstLevel.UnloadAudioData();
 
         sourceOfAudio.clip = MusicSecondLevel;
-
-
+        timeForLevel += 40;
+        sourceOfAudio.Play();
 
 
         sLdr.LoadNextLevel();
@@ -294,6 +317,11 @@ public class GameManager : MonoBehaviour
 
 
     }
+    public void MakeIsGameOverFalse()
+    {
+        isGameOver = false;
+    }
+
     public void RegisterEnemy()
     {
         totalEnemiesToDestroy++;
@@ -303,24 +331,27 @@ public class GameManager : MonoBehaviour
     {
         if (HealthSlider.value <= 0)
         {
+            
             levelFailed();
         }
         if ((totalEnemiesDestroyed) == totalEnemiesToDestroy)
         {
+            isGameOver = true;
             score += Mathf.RoundToInt(timeForLevel - elapsedTime) * 10;
             canPauseBeCalled = false;
             shouldBossAppear = true;
             Debug.Log(sLdr.currentLevelNumber);
+            if (highScore > PlayerPrefs.GetInt("highScore"))
+            {
+                PlayerPrefs.SetInt("highScore", highScore);
+            }
             if (sLdr.currentLevelNumber < totalLevels)
             {
-                if (highScore > PlayerPrefs.GetInt("highScore"))
-                {
-                    PlayerPrefs.SetInt("highScore", highScore);
-                }
+                
                 Debug.Log("succesfssully completed..");
 
-                sourceOfAudio.clip = MusicSecondLevel;
-                sourceOfAudio.Play();
+                
+                
 
                 scoreField.text = "current score is: " + score.ToString();
                 highscoreField.text = "All time highscore is: " + PlayerPrefs.GetInt("highScore").ToString();

@@ -29,6 +29,7 @@ public class PlayerControllerFast : MonoBehaviour
     public GameObject fireEffectPrefab;
 
     public GameObject bulletPrefab;
+    
     void Update()
     {
 
