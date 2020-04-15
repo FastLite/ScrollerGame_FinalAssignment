@@ -194,7 +194,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("BottomTrigger"))
+        if (collision.gameObject.CompareTag("BottomTrigger") && springJointRef == null && connectedBody != null)
             connectedBody.GetComponent<Enemy>().StopMovement();
         if (collision.gameObject.CompareTag("TopTrigger"))
         {
