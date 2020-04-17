@@ -278,7 +278,7 @@ public void makeFireAvaileble()
         ResetHealth();
         ResetPlayerPosition();
         
-        totalEnemiesDestroyed = 0;
+        
         switch (shipType)
         {
             case 1:
@@ -348,13 +348,14 @@ public void makeFireAvaileble()
             shouldBossAppear = true;
             Debug.Log(sLdr.currentLevelNumber);
             
+            
             if (highScore > PlayerPrefs.GetInt("highScore"))
             {
                 PlayerPrefs.SetInt("highScore", highScore);
             }
             if (sLdr.currentLevelNumber < totalLevels)
             {
-                
+                totalEnemiesDestroyed = totalEnemiesToDestroy;
                 Debug.Log("succesfssully completed..");
 
                 
